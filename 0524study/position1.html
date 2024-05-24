@@ -1,0 +1,105 @@
+<!--position1.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그의 포지션</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*body{margin:0;} 을해야하는데 표기는 *{margin:0; padding:0; box-sizing:border-box;} 
+            모든태그의 마진과 패딩값을 0으로 만들고 사이즈고정/*의뜻은  all 전부 */
+
+        #parent1 {
+            /*absolute는 크기는 영향을 받지않는다. 현재상태에서 크기는 900이아닌 300이다.
+            relative는 크기를 영향을 받기에 크기는 900이다*/
+            position: relative;
+            /*모든태그의 기준점  static */
+        }
+
+        #box1 {
+            width: 300px;
+            height: 300px;
+            background: blue;
+        }
+
+        #box2 {
+            width: 300px;
+            height: 300px;
+            background: yellow;
+            position: relative;
+            left: 300px;
+
+            /*absolute 절대적(바디태그기준)/ relatve(자기자신기준) 상대적*/
+
+
+        }
+
+        #box3 {
+            width: 300px;
+            height: 300px;
+            background: red;
+            position: relative;
+            left: 600px;
+        }
+
+        #box4 {
+            width: 300px;
+            height: 300px;
+            background: orangered;
+            position: absolute;
+            top: 0px;
+            left: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="parent1">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        <div id="box4"></div>
+    </div>
+
+</body>
+
+</html>
+
+<!--
+    position은 화면에서 태그의 위치를 표시하기위한 속성이다.
+    position에는 static, relative, absolute, fixed 등 이 있다.
+    html의 태그에 별도로 position 지정하지않으면 static 상태이다.
+    static는  html문서에 작성된 태그의 위치에 표시해주는 상태이다.
+    <div></div>은 html문서에 작성된 태그의 위치에 표시해주는 상태이다.
+    relative 로 변경하면 
+    
+    static상태일때의 위치를 기준으로 한다.(x축, y축좌표 -0,0)
+            top -> 양수의값 입력하면 y축 좌표값 증가
+                   음수의값 입력하면 y축 좌표값 감소
+            left -> 양수의값 임력하면 x축 좌표값 증가
+                    음수의값 입력하면 x축 좌표값 감소
+            Right-> 양수의값 입력하면 x축 좌표값 감소
+                    음수의값 입력하면 x축 좌표값 증가
+            bottom->양수의값 입력하면 y축 좌표값 감소
+                    음수의값 이볅하면 y축 좌표값 증가
+    상위태그들중에 position(relative,absolute)을 가지고 있어도 기준은 변하지 않는다.
+
+    absolute로 변경하면 부모(상위)태그의 시작좌표를 기준으로 한다.
+    부모태그가 position(relative,absolute)을 가지고 있지 않으면 위쪽 상위태그들중에서
+    position(relative, absolute)를 가진 태그 기준으로 한다.
+    (상위태그들중에 누구하나 position을 가지고 있지 않으면  body를 기준으로한다)
+            top-> 상위 태그 상단 기준으로  y축 증감
+            left-> 상위 태그 왼족 기준으로 x축 증감
+            bottom->상위태그 하단 기준으로  y축 증감
+            right-> 상위태그 오른쪽 기준으로 x축 증감
+
+
+-->
