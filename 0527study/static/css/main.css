@@ -1,0 +1,227 @@
+/* main.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#hearder {
+    width: 100%;
+    margin-bottom: 20px;
+    /*#main 태그와의 간격 */
+    position: relative;
+}
+
+#top {
+    background: #3b414d;
+    color: #eee;
+    width: 100%;
+
+}
+
+.top_text_box {
+    text-align: right;
+    padding-right: 50px;
+
+}
+
+#top .top_text {
+    display: inline-block;
+    padding: 8px 15px;
+}
+
+/*top 밑에있는 .top_text*/
+#top .top_text:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+#nav {
+    width: 100%;
+    position: relative;
+    height: 106px;
+    /*float을 썼기때문에 높이를 준것*/
+}
+
+#logo_box {
+    padding: 8px 0;
+    float: left;
+
+    /*float-정렬 사용시 상위태그에 영향을 주지 않는다(높이가 안늘어남)
+    float사용시 상위태그에 height를 꼭 줘야함*
+    float은 뜨다의 뜻을 가지고 있고 html에서도 상위 태그위 떠있는 형태로 표시 되기
+    때문에 상위 태그에 포함되지 않는다.
+    정렬을 위한 속성이지만 상위태그에 미포함되기때문에 별도로 상위태그에
+    높이, 여백 같은 값을 별도로 지정해줘서 사용해야한다.*/
+}
+
+/*왼쪽오른쪽은 margin을사용하지만 위아래는 padding을줘서 표현함.margin사용시 사이즈가달라짐*/
+
+#logo_box img {
+    width: 90px;
+
+
+}
+
+/*logo box>img{} 또는 logo_box img{} 둘중하나로 표기*/
+
+#menu_box {
+    position: relative;
+}
+
+#menu_list {
+    position: absolute;
+    right: 0;
+
+
+    /*
+        height: 106px;
+        padding: 40px 0;
+   */
+
+}
+
+#menu_list .menu {
+    float: left;
+    position: relative;
+    top: 30px;
+    font-size: 25px;
+    padding: 0 15px;
+}
+
+#menu_list .menu:hover {
+    cursor: pointer;
+    color: red;
+    font-weight: 800px;
+    text-shadow: 3px 3px 2px #444;
+}
+
+#main {
+    width: 100%;
+}
+
+#slide {
+    width: 100%;
+    position: relative;
+}
+
+.move_bt {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*위치  top:50%+transform:translateY(-50%) 정가운데*/
+    background: #eee;
+    padding: 1px 5px 5px 5px;
+    font-size: 25px;
+    opacity: 0.3;
+    /*x투명도설정 0~1사이 설정가능*/
+    cursor: pointer;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+#slide .slide_image {
+    /*background: url(../image/slide.jpeg);
+    background-repeat: no-repeat; (반복패턴으로 안할때)
+    background-size: contain; ((원래사진그대로사용/늘릴땐 cover))
+    background-position: center; */
+
+    background: url(../image/slide.jpeg) no-repeat center;
+    background-size: cover;
+    height: 350px;
+}
+
+#content {
+    width: 100%;
+    height: 280px;
+    padding: 20px;
+}
+
+
+.left_content {
+    float: left;
+    width: 50%;
+}
+
+.left_content .notice .title {
+    line-height: 40px;
+    /*line-height 줄간격 1줄에 40px*/
+}
+
+.right_content {
+    width: 50%;
+    padding: 10px;
+    float: left;
+}
+
+.event_top {
+    background: url(../image/event1.jpeg) no-repeat center;
+    background-size: cover;
+    height: 105px;
+    border-radius: 10px;
+    /*모서리 부분 둥글게 만드는것*/
+    box-shadow: 3px 3px 5px #666;
+    /*맨 앞에 inset을 적어주면 안쪽으로 그림자가 들어감*/
+}
+
+.event_bottom {
+    background: url(../image/event2.jpeg) no-repeat center;
+    background-size: cover;
+    height: 105px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#footer {
+    background: #3b414d;
+    padding: 20px;
+    color: #eee;
+}
+
+.foot_menu {
+    height: 30px;
+    font-size: 12px;
+}
+
+.foot_menu li {
+    float: left;
+    padding: 0 20px;
+}
+
+.foot_menu li:nth-child(1) {
+    padding-left: 0;
+}
+
+.foot_menu li:nth-child(2) {
+    border-left: 2px solid rgb(249, 249, 151);
+    border-right: 2px solid rgb(249, 249, 151);
+}
+
+.foot_menu li:nth-child(3) {
+    border-right: 2px solid rgb(249, 249, 151);
+}
+
+.foot_text {
+    color: #bbb;
+    font-weight: 800px;
+}
+
+.foot_text p {
+    line-height: 30px;
+}
