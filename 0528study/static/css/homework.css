@@ -1,0 +1,111 @@
+/*homework.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#top {
+    width: 100%;
+    padding: 20px 0;
+}
+
+#slid {
+    width: 100%;
+    position: relative;
+}
+
+#slide .slide_image {
+    width: 100%;
+    height: 500px;
+    background: url(https://loremflickr.com/1000/500/earth) no-repeat center;
+    background-size: cover;
+}
+
+#slide .slide_bt {
+    width: 100%;
+}
+
+#slide .slide_bt span {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background: #68c7dd;
+    border-radius: 10px;
+    margin: 10px 15px;
+    cursor: pointer;
+}
+
+#slide .slide_bt span:first-child {
+    background-color: #01738d;
+    margin-left: 0px;
+}
+
+#main_text {
+    line-height: 40px;
+    font-size: 23px;
+}
+
+#gallery {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+#gallery {
+    width: 100%;
+    position: relative;
+}
+
+#gallery ul li {
+    width: 30%;
+    background-size: cover;
+    height: 200px;
+}
+
+#gallery ul li:nth-child(1) {
+    background: url(https://loremflickr.com/400/400/?random1) no-repeat center;
+    position: relative;
+}
+
+#gallery ul li:nth-child(2) {
+    background: url(https://loremflickr.com/400/400/?random=2) no-repeat center;
+    position: absolute;
+    top: 0;
+    left: 35%;
+}
+
+#gallery ul li:nth-child(3) {
+    background: url(https://loremflickr.com/400/400/?random=3) no-repeat center;
+    position: absolute;
+    top: 0;
+    left: 70%;
+
+}
+
+#subMenu {
+    position: fixed;
+    top: 300px;
+    left: 100px;
+    background-color: #68c7dd;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.subItem {
+    padding: 10px 15px;
+}
+
+.subitem:hover {
+    background: #c9eeff;
+    color: #999;
+    cursor: pointer;
+}
