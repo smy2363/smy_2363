@@ -1,0 +1,277 @@
+/* papago과제.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#wrap {
+    width: 1754px;
+    height: 700px;
+    margin: 0 auto;
+
+}
+
+#top {
+    width: 100%px;
+    height: 130px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-bottom: 2px solid gray;
+}
+
+#icon {
+    width: 600px;
+    height: 60px;
+    background: url(../image/papago.jpeg) no-repeat left;
+    background-size: contain;
+    position: relative;
+}
+
+#name {
+    height: 60px;
+    position: relative;
+    left: 60px;
+    bottom: 60px;
+    font-size: 25px;
+}
+
+#left_menu {
+    height: 60px;
+    position: relative;
+    left: 250px;
+    bottom: 105px;
+    font-size: 20px;
+    font-weight: 700px;
+}
+
+#left_menu .menu {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+#right_menu {
+    height: 60px;
+
+}
+
+.menu_icon1 {
+    background: url(../image/번역.jpeg) no-repeat right;
+    background-size: contain;
+    height: 80px;
+    position: relative;
+    right: 270px;
+    bottom: 190px;
+}
+
+.menu_icon2 {
+    background: url(../image/즐겨찾기.jpeg) no-repeat right;
+    background-size: contain;
+    height: 80px;
+    position: relative;
+    right: 220px;
+    bottom: 270px;
+}
+
+.menu_icon3 {
+    background: url(../image/설정.jpeg) no-repeat right;
+    background-size: contain;
+    height: 80px;
+    position: relative;
+    right: 170px;
+    bottom: 350px;
+}
+
+.menu_icon4 {
+    background: url(../image/로그인.jpeg) no-repeat right;
+    background-size: contain;
+    height: 80px;
+    position: relative;
+    right: 67px;
+    bottom: 430px;
+}
+
+.menu_icon5 {
+    background: url(../image/전체보기.jpeg) no-repeat right;
+    background-size: contain;
+    height: 80px;
+    position: relative;
+    bottom: 505px;
+}
+
+#middle {
+    width: 500px;
+    padding-left: 300px;
+}
+
+#left_box1 {
+    width: 500px;
+    height: 400px;
+    margin-top: 60px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.box_1 {
+    width: 498px;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 2px solid gray;
+    padding-top: 9px;
+    padding-left: 5px;
+}
+
+#left_box1>.box_1:hover {
+    position: absolute;
+    cursor: pointer;
+    color: blue;
+}
+
+#left_box2 {
+    position: relative;
+    padding-left: 5px;
+    width: 498px;
+    bottom: 350px;
+    font-size: 30px;
+    color: gray;
+}
+
+#left_box2_2 {
+    position: relative;
+    width: 498px;
+    bottom: 180px;
+    left: 430px;
+}
+
+#left_box3 {
+    width: 498px;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    border-top: 2px solid gray;
+    bottom: 130px;
+}
+
+.left_icon {
+    width: 70px;
+    height: 68px;
+    border-right: 2px solid gray;
+    position: relative;
+    bottom: 1px;
+}
+
+.left_icon_2 {
+    width: 70px;
+    height: 68px;
+    border-right: 2px solid gray;
+    position: relative;
+    bottom: 70px;
+    left: 70px;
+}
+
+.left_icon_3 {
+    width: 140px;
+    height: 67px;
+    position: relative;
+    box-sizing: border-box;
+    border-left: 2px solid gray;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-left: 5px;
+    left: 380px;
+    bottom: 136px;
+
+}
+
+#right_box2_11 {
+    width: 500px;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 250px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    position: relative;
+    left: 650px;
+    bottom: 520px;
+}
+
+#right_box2_11>.box2_22:hover {
+    position: absolute;
+    cursor: pointer;
+    color: blue;
+}
+
+.box2_22 {
+    width: 498px;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 2px solid gray;
+    padding-top: 9px;
+    padding-left: 5px;
+}
+
+#right_box2_3 {
+    width: 498px;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    border-top: 2px solid gray;
+    left: 900px;
+    bottom: 590px;
+
+}
+
+.right_icon_11 {
+    width: 70px;
+    height: 68px;
+    position: relative;
+    box-sizing: border-box;
+    border-right: 2px solid gray;
+
+}
+
+.right_icon_22 {
+    width: 140px;
+    height: 68px;
+    position: relative;
+    box-sizing: border-box;
+    border-right: 2px solid gray;
+    bottom: 68px;
+
+}
+
+.right_icon_33 {
+    width: 210px;
+    height: 68px;
+    position: relative;
+    box-sizing: border-box;
+    border-right: 2px solid gray;
+    bottom: 136px;
+
+}
+
+.right_icon_44 {
+    width: 280px;
+    height: 68px;
+    position: relative;
+    box-sizing: border-box;
+    border-right: 2px solid gray;
+    bottom: 205px;
+
+}
+
+#foot {
+    width: 1000px;
+    box-sizing: border-box;
+    border-top: 2px solid gray;
+    position: relative;
+    left: 350px;
+    bottom: 450px;
+
+}
