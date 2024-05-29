@@ -1,0 +1,156 @@
+/* papago.css*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrap {
+    width: 100%;
+    min-width: 800px;
+    position: relative;
+
+}
+
+#header {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    border-bottom: 1px solid #aaa;
+}
+
+#header_left {
+    position: relative;
+    width: 100%;
+}
+
+#header_left .logo {
+    /*width: 130px;*/
+    height: 35px;
+}
+
+#header_left .logo img {
+    /*width: 130px;*/
+    height: 35px;
+}
+
+
+#header_left .menu {
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    line-height: 35px;
+}
+
+#header_left .menu .menu_text:nth-child(2) {
+    margin: 0 10px;
+    position: relative;
+}
+
+#header_left .menu .menu_text:nth-child(2)::after {
+    content: "|";
+    position: absolute;
+    right: -10px;
+    bottom: -5px;
+    color: gray;
+}
+
+#header_right {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#header_right>span {
+    border: 1px solid #aaa;
+    padding: 3px 7px;
+    font-size: 12px;
+}
+
+#main {
+    width: 1400px;
+    margin: 0 auto;
+    padding: 50px 0;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+
+#main_box {
+    width: 100%;
+    position: relative;
+}
+
+#main_box .translation {
+    width: 685px;
+    position: relative;
+    top: 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#main_box .translation_right {
+    position: absolute;
+    right: 0;
+}
+
+#main_box .translation_top {
+    padding: 20px 30px;
+    font-weight: 700;
+}
+
+#main_box .translation_middle {
+    padding: 40px 17px;
+    height: 226px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+#main_box .translation_middle .guide {
+    font-size: 29px;
+    color: #777;
+    font-weight: 600;
+}
+
+#main_box .translation_middle .count {
+    font-size: 20px;
+    color: #aaa;
+    position: absolute;
+    right: 17px;
+    bottom: 40px;
+}
+
+#main_box .translation_bottom {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+#main_box .translation_bottom .function {
+    display: flex;
+    width: 75%;
+}
+
+#main_box .translation_bottom .function span {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    border-right: 1px solid #ccc;
+
+}
+
+#main_box .translation_bottom .translation_bt {
+    display: inline-block;
+    width: 25%;
+}
+
+#main_box .translation_bottom .translation_bt button {
+    width: 100%;
+    height: 70px;
+    border: 0;
+    font-size: 23px;
+    background: #21dc6d;
+    color: white;
+}
