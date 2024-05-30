@@ -1,0 +1,199 @@
+<!--flex_test2-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        #cont1 {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /*gap: 10px;*/
+        }
+
+        #cont1>img {
+            width: 25%;
+            padding-right: 10px;
+            box-sizing: border-box;
+            /*width: calc((1200px - 30px) / 4);*/
+        }
+    </style>
+
+    <h2>여러줄 배치하기</h2>
+    <div id="cont1">
+        <img src="https://loremflickr.com/300/400/?random=1">
+        <img src="https://loremflickr.com/300/400/?random=2">
+        <img src="https://loremflickr.com/300/400/?random=3">
+        <img src="https://loremflickr.com/300/400/?random=4">
+        <img src="https://loremflickr.com/300/400/?random=5">
+        <img src="https://loremflickr.com/300/400/?random=6">
+        <img src="https://loremflickr.com/300/400/?random=7">
+        <img src="https://loremflickr.com/300/400/?random=8">
+        <img src="https://loremflickr.com/300/400/?random=9">
+        <img src="https://loremflickr.com/300/400/?random=10">
+    </div>
+
+    <style>
+        #card_wrap {
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            box-sizing: border-box;
+            row-gap: 9px;
+        }
+
+        .card {
+            width: 33.33%;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .card:nth-child(1),
+        .card:nth-child(4) {
+            padding-right: 6px;
+        }
+
+        .card:nth-child(2),
+        .card:nth-child(5) {
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        .card:nth-child(3),
+        .card:nth-child(6) {
+            padding-left: 6px;
+        }
+
+        .card .card_img {
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card .card_img img {
+            width: 100%;
+            display: block;
+        }
+
+        .card_text {
+            margin: 0;
+            padding-top: 5px;
+            -webkit-line-clamp: 2;
+            /*화면에 표시 할 라인 수 (현재 2줄)*/
+            overflow: hidden;
+            /*overflow - 지정된 크기보다 큰 영역 또는 텍스트, 이미지를
+                        화면에 어떻게 표시 할것인지 설정*/
+            height: 42px;
+
+
+
+
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            /*3줄넘어갈때 ...으로 표기원할시*/
+        }
+    </style>
+
+    <div id="card_wrap">
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130/?random=1" alt=""></div>
+            <p class="card_text">크레이지뭉크뿜뿜모모치즈패밀리</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130/?random=2" alt=""></div>
+            <p class="card_text">본문 푸터까지 마크업, H1, H2</p>
+        </div>
+
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130/?random=3" alt=""></div>
+            <p class="card_text">제목을 표시하고 p태그로 문장</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130/?random=4" alt=""></div>
+            <p class="card_text">링크는 A, 이미지는 IMG</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130/?random=5" alt=""></div>
+            <p class="card_text">CSS 스타일 색상 폰트 레이아웃</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130/?random=6" alt=""></div>
+            <p class="card_text">클래스와 아이디로 선택하고 헥사코드</p>
+        </div>
+    </div>
+    </div>
+
+    <body>
+
+
+        <div></div>
+        </div>
+
+        <div id="cont2">
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">똑똑한 인사정보 관리</h2>
+                <p class="text3">한 곳에서 관리하는 인사 및 개인정보</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">구성원 근무</h2>
+                <p class="text3">우리 회사 문화에 알맞는 근무와 휴가 관리</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">워크플로우(전자결재)</h2>
+                <p class="text3">회사의 모든 의사결정과 커뮤니케이션</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">HR인사이트(Analytics)</h2>
+                <p class="text3">심층 분석된 회사 HR 데이터 확인</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">회사 문서 관리</h2>
+                <p class="text3">회사의 다양한 문서 및 증명서 보관</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">할 일 요청 및 공지사항 작성</h2>
+                <p class="text3">한눈에 들어오는 할 일과 회사 소식</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">외부 서비스 연동</h2>
+                <p class="text3">구글 혹은 슬랙과 제품내 주요 기능 연동을 통한 편의성 제공</p>
+            </div>
+            <div class="text1">
+                <div class="logo">●</div>
+                <h2 class="text2">강력한 보안</h2>
+                <p class="text3">국제표준화기구에서 제정한 정보보호 관리체계 인증</p>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>
