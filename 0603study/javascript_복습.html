@@ -1,0 +1,84 @@
+<!--javascript_복습-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //변수 - 단일 데이터가 저장된 메모리(ram)공간
+        //변수의 이름은 의미있게 카멜 표기법으로 작성하는게 일반적
+        //random, randomAccess, randomAccessMemory
+        //변수명 은 반드시 문자로 시작해야한다.
+        //변수명 은 시스템(언어)예약어를 사용하면 안된다.
+
+        //자바스크립트 출력
+        //1. document.write( 출력할 내용);
+        // document -> HTML 문서
+        // write -> HTML문서에서 body태그에 쓰기해라
+        //          HTML문서에서 body엘리먼트(body객체) - 자바스크립트에서의 태그 표현
+        //
+        //자바스크립트 입력
+        //1. prompt();
+        //prompt -> 현재 페이지에 내부 창을 만들어서 화면에 표시하는 방법
+        //prompt 입력한 값은 문자열이다.
+        //문자열이므로 숫자로 사용하려면 parseInt(), parseFloat(), Number() 같은
+        //                문자열 -> 숫자로 변환 해주는 함수를 사용해야한다.
+
+        // 주유소에서 휘발유를 넣고자 한다.
+        // 휘발유는 1,636원이다.
+
+        refuelCar = Number(prompt("주유 휘발유 량"));
+        //prompt로 입력받은 값을 Number 함수를 통해 문자열을 숫자로 변환
+        //숫자로 변환해서 refuelCar 변수에 저장
+        gasolineCost = 1636; //휘발유 리터당 금액
+
+        gasPrice = gasolineCost * refuelCar;
+        //총 주유 금액은 리터당 휘발유금액 * 충전휘발유량;
+
+
+        document.write("상품명 : 휘발유<br>");
+        document.write("판매량 : " + refuelCar + "<br>");
+        document.write("단가 : " + gasolineCost + "<br>");
+        document.write("지불금액 : " + gasPrice + "<br>");
+
+        document.write("<hr>");
+
+        //문제 1.
+        //삼각형의 넓이를 구하세요 (밑변*높이/2)
+        //밑변과 높이를  prompt를 통해 입력받으세요.
+
+
+
+        base = parseInt(prompt("밑변 : "));
+        height = parseInt(prompt("높이 : "));
+
+        area = Math.floor(base * height / 2);
+
+        document.write("삼각형 밑변 : " + base + "<br>");
+        document.write("삼각형 높이 : " + height + "<br>");
+
+        document.write("삼각형의 넓이 : " + area + "<br>");
+
+        //Math.floor(숫자) -> 정수만 추출
+        //Math.round(숫자) -> 소수점 이하를 반올림
+        //숫자저장된변수  num=20.345;
+        //20.345 -> 20.3
+        //소수점 몇자리까지 표현
+        //num.toFixed(1); => 20.3
+        //변수명.toFixed(소수점 자릿수);
+        // ParseFloat(변수명.toFixed(소수점 자릿수)); -> 실수라는 숫자로 사용가능
+
+        document.write("<ul><li>1번리스트</li><li>2번리스트</li></ul>");
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
