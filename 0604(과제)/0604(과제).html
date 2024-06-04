@@ -1,0 +1,77 @@
+<!--0604(과제)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //1. 세개의 정수를 입력받아서 가장 큰수를 출력하세요.
+        //단, 같은 숫자는 입력하지 말고요<if문으로 작성>
+
+        num1 = Number(prompt("첫번째 정수를 입력하세요"));
+        num2 = Number(prompt("두번째 정수를 입력하세요"));
+        num3 = Number(prompt("세번째 정수를 입력하세요"));
+
+
+        if ((num1 > num2) && (num2 < num3) && (num1 > num3)) {
+            result = num1;
+            document.write(("큰수") + num1);
+        }
+        else if ((num1 < num2) && (num2 > num3) && (num1 > num3)) {
+            result = num2;
+            document.write(("큰수") + num2);
+        }
+        else if ((num1 == num2 == num3) || (num1 == num2) || (num2 == num3) || (num1 == num3)) {
+            document.write("같은 숫자는 입력하지 마세요");
+        }
+
+        else {
+            ((num1 < num2) && (num2 < num3) && (num1 < num3))
+            result = num3;
+            document.write(("큰수") + num3);
+        }
+
+
+        //2. 주사위 게임 컴퓨터와 함께
+        //-컴퓨터와 내가 각각 주사위 2개씩 던진다
+        //-주사위의 합이 큰쪽이 이긴다.
+        //-단, 주사위가 같은 값이면 이긴다.
+
+        document.write('<hr>');
+
+        com = (Math.floor(Math.random() * 6) + 1) * 2;
+        user = (Math.floor(Math.random() * 6) + 1) * 2;
+
+
+
+        if ((com > user)) {
+            document.write("컴퓨터가 이겼습니다." + "컴퓨터 :" + com + "유저 :" + user);
+        }
+
+        else if (com == user) {
+            document.write("유저가 이겼습니다." + "컴퓨터 :" + com + "유저 :" + user);
+        }
+        else {
+            (com < user)
+            document.write("유저가 이겼습니다." + "컴퓨터 :" + com + "유저 :" + user);
+        }
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
