@@ -1,0 +1,125 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //주차비를 정산하는 프로글매 만들기
+        //기본 주차비는 1000원 이고, 기본 주차시간은 30분이다.
+        // -12분 주차해도 1000원이다.
+        //10분당 100원
+        //-10분이상 주차 할경우 100원씩 부과된다.
+        //단, 2시간 이상 주차시 기본요금은 1700원이다.
+        //-2시간 5분 주차시 1700원이다. 2시간에 대한 요금은 1700원으로 계산한다.
+        //-2시간 23분 주차시 1900원이다.
+        //4시간 이상 주치사 기본요금은 2700원이다.
+        //-4시간에 대한 요금은 2700원으로 계산한다.
+        //-4시간 35분 주차시 기본요금 2700+30분 초과금액 300 계산해서 3,000원이다.
+        //주차를 총 몇분하였는가를 입력하면 주차비가 출력되여야한다.
+
+
+
+
+        // basicTime = 30;
+        // basicCharge = 1000;
+        // parkingTime = parseInt(prompt("주차한 시간(분)을 적으시오"));
+
+        // addTime = parkingTime - (Math.floor(parkingTime / 60) * 60);
+        // console.log(addTime);
+        // addCharge = 100;
+        // basicCharge = (Math.floor(parkingTime / 60) >= 4) ? 2700 : (Math.floor(parkingTime) / 60 >= 2) ? 1700 : basicCharge;
+        // console.log(basicCharge);
+        // console.log(addTime);
+        // addCharge = (basicTime > parkingTime) ? 0 : (Math.floor(addTime / 10) >= 1) ? Math.floor((addTime / 10)) * 100 : 0;
+        // console.log(addCharge);
+        // totalCharge = basicCharge + addCharge;
+
+        // document.write("주차비는 ?" + totalCharge);
+
+
+        //cpt - customerParkingTime  고객 주차시간
+
+        // cost = 1000;
+        // parkingTime = 3;
+        // add = 100;
+
+        // cpt = Number(prompt("총 주차시간 몇분"));   //35
+
+        // cost = (cpt >= 240) ? 2700 : (cpt >= 120) ? 1700 : cost;
+
+        // parkingTime = (cpt >= 240) ? 24 : (cpt >= 120) ? 12 : parkingTime;
+
+
+        // time = Math.floor(cpt / 10);
+        // price = (time <= parkingTime) ? cost : cost + (time - parkingTime) * add;
+
+        // document.write(`주차시간:${cpt}분, 주차비 : ${price.toLocaleString()}원 <br>`);
+
+
+        //논리연산자 &&(and), ||(or), !(not)
+        //연산자는 두개의 피연산자 사이에 배치된다.
+        //논리 연산자는 참과 거짓을 피연산자로 사용하는 연산자이다.
+        //10 && 5 (이건 안됨), (10>3)&&(5>10)  (논리연산자 양쪽으로 참 or 거짓의 식이 있어야함)
+        //두개 이상의 조건식을 사용하는 경우에 논리연산자(&&, ||)을 사용한다.
+
+        //&&(and) - 참 && 참      결과: 참
+        //        - 참 && 거짓    결과: 거짓
+        //        - 거짓 && 참    결과: 거짓
+        //        - 거짓 && 거짓  결과: 거짓
+
+        //|| (or) - 참||참        결과: 참
+        //        - 참||거짓      결과: 참
+        //        - 거짓||참      결과: 참
+        //        - 거짓||거짓    결과: 거짓
+
+        //바이킹 타는 조건은 키가 150이상 190이하만 가능
+        //(키 >= 150) && (키 <= 190)
+
+        // 두개의 주사위를 던져서 합이 4 이거나 9라면 당첨이다.
+        //(합 == 4) || ((합 == 9) && (조건식)) || (조건식)
+
+        //범퍼카 탑승 조건 : 키 130이상,
+        //                  키가 110이상일 경우 부모 동반하면 탑승가능
+
+        //(키 > 130) || ((키 >= 110) && (부모 == 동반))
+
+        //무한 리필 고깃집 : 운동선수 2명이상 입장 불가
+        //                  하지만 중학생까지는 입장가능
+        //                  몸무게 140키로 이상 입장불가
+
+        //((운동선수 < 2) || (운동선수 <= 중학생)) && (몸무게 < 140)
+
+
+
+        //not연산자
+
+
+        사과 = 10;
+
+        document.write((사과 >= 1) ? "판매중" : "품절");
+        document.write("<hr>");
+        document.write((!사과) ? "품절" : "판매중");
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
