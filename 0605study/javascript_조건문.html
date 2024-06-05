@@ -1,0 +1,91 @@
+<!-- javascript_조건문.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //변수의 범위(scope)
+        //let, var, const
+
+        g = 10;
+        g = 40;
+        g = 50;
+
+        let a = 10;
+        a = 20;
+        a = 30;
+        //let a = 330;    변수의 데이터 변경 가능, 변수를 재생성 안됨
+
+        var b = 10;
+        b = 23231;
+        var b = 32;      //변수의 데이터 변경가능, 변수를 재생성 가능
+
+        const c = 30;    //심볼릭 상수, 상수 -데이터 읽기 권한만 있는 메모리 공간
+        //c = 45;         변수의 데이터 변경 불가, 변수를 재생성 안됨
+        //const c=23;
+
+        //let - { } 안에 변수 생성 (지역변수), 전역변수, 배열 생성시, 객체생성시
+        //var - { } 안에 변수 생성(지연변수)
+        //const - 고유값, 변경 되면 안되는 값, 불변 데이터를 이름으로 표현 하고자 할때
+        //         const pi=3.14;
+        //         소프트웨어 개발시 다른 사람에게 변경하지말라, 건들지 말라고 알려주기 위한용도
+
+
+        //변수 생성, 변수 할당 이라고 한다.
+
+        let count = 0; //변수의 초기화 - 변수를 생성 또는 할당 하면서 데이터를 저장하는 행위
+
+
+        function up() {
+            if (count < 20) {
+                count++;
+            }
+            // document - html 문서(dom)
+            // .getElement - html 안에서 태그를 가져와라
+            //getElementById - html 태그의 id로 찾아라
+            //getElementByClassName - html태그의 class로 찾아라
+            var divBox = document.getElementById("box");
+            divBox.innerText = count;  //id가 box인 div태그 안에 count변수 값을 쓰기해라.
+
+        }
+        function down() {
+            if (count > -10) {
+                count--;
+            }
+            var divBox = document.getElementById("box");
+            divBox.innerText = count;
+
+        }
+        // 증가되는 최대값은 20이고, 감소되는 최소값은 -10이다.
+        // 최대와 최소에 도달하면 더이상 증감 되지않게 하시오.
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- onclick은 마우스로  html태그를 클릭할때의 동작을 처리하기위한 이벤트이다.
+        태그를 클릭하면 onclick="함수명()" 의 함수명 이라는 이름을 자바스크립트에서
+        찾아서 실행시킨다.
+        클릭하면 어떤 기능 또는 동작을 하고 싶은지 자바스크립트로 작성해야 한다.
+    
+        up() -> up이라는 이름의 함수를 실행 해라 뜻, up함수 호출
+    -->
+
+    <button onclick="up()">증가</button>
+    <button onclick="down()">감소</button>
+
+    <div id="box" style=font-size:40px;></div>
+
+</body>
+
+</html>
