@@ -1,0 +1,47 @@
+<!--0605과제-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var user = Number(prompt("up&down 1~50중 하나를 선택해 적으세요~! "));
+
+
+
+
+        while (true) {
+            let com = Math.floor(Math.random() * 50) + 1;
+            let com1 = Math.floor(Math.random() * 25) + 1;
+            let com2 = Math.floor(Math.random() * 25) + 26;
+
+
+            if (user == (com || com1 || com2)) {
+                document.write("<br> 정답" + user);
+                break;
+            }
+            else if ((com || com1) < user) {
+
+                document.write("<br> UP" + com);
+            }
+            else if ((com || com2) > user) {
+                document.write("<br> DOWN" + com);
+            } else (random("com") == random("com1") == random("com2"));
+
+        }
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
