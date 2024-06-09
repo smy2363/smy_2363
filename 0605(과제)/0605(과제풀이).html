@@ -1,0 +1,51 @@
+<!--과제풀이-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        let user = 0;
+        while (!(1 <= user && user <= 50))
+            user = Number(prompt("1~50중 하나 입력하세요"));
+
+        var max = 50; //랜덤범위의 최대값
+        var min = 1; //랜덤범위의 최소값
+        var mul = 50; //랜덤함수 최대값-최소값+1
+
+        while (true) {
+            com = Math.floor(Math.random() * mul) + min; //*50)+1-1~50
+
+            if (user === com) {
+                document.write("정답!! com:" + com + "  user: " + user);
+                break; //while문 반복 종료
+            }
+
+            else if (com < user) {//내가 입력한 값보다 컴퓨터의 값이 작다면
+                document.write(`up! (com:${com})<br>`);
+                min = com + 1; //랜덤범위의 최소값 - 결과가 없으므로 컴퓨터값보다 +1이 최소값
+                mul = max - min + 1; //랜덤범위의 최대값 변화 없음 - 최소값이 변경되었으므로 * 값변경
+
+            }
+            else if (com > user) {//내가 입력한 값보다 컴퓨터의 값이 크다면
+                document.write(`DOWN!(com:${com})<br>`);
+                max - com - 1; //랜덤범위의 최대값 - 다운이므로 최대값만 변경
+                mul = max - min + 1; //랜덤 범위가 변경 되었으므로 *의 값도변경
+
+            }
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
