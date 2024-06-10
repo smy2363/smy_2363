@@ -1,0 +1,229 @@
+<!--javascript_함수-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // document.write("언제 실행?"); //브라우저가 html파일열기 하면서 html코드를 순차적
+        //으로 실행하면 실행 되는 코드이다.
+
+        // function - 자바스크립트에서 함수 정의는 function으로 시작한다.
+        // 함수 정의란 - 특정 기능(작업)을 실행하기 위한 코드블록
+        // 코드블록이란 {  }다 !!
+        // 자바스크립트 함수는 이벤트 처리, 부가적인 코드 실행을 위해 만들어 사용한다.
+        // 이벤트란 - 브라우저에서 사용자(클라이언트)가 하는 모든 행위가 이벤트이다.
+        // 마우스 움직이기, 마우스 왼쪽버튼클릭, 마우스 왼쪽버튼 더블클릭, 키보드 누르기
+        // 키보드 누르고 있기, 키보드 눌렀다 떼기, 키보드에 특정키 누르기,
+        // 브라우저 크기 조절, 브라우저 위치 이동 등등
+
+        // 함수 형태
+        // function 함수의이름(a){ 함수의 이름은 함수기능에 맞는 이름으로 만들기
+        //      document.write(a+10);
+        // }
+
+        //함수의 정의 - 어떤 코드를 실행 시킬것인가 코드만 작성해놓은 것
+        //             실제 실행 되지않는 상태, 예비상태이다.
+        // 함수를 실행시키려면 함수 호출을 해야한다.
+        // // document.write(); ->write 함수호출
+
+        // kor = 90;
+        // eng = 80;
+        // mat = 32;
+
+        // print(kor, eng, mat);
+
+        // function print(x, y, z) { //화면에 출력 하기위한 함수. num - 매개변수
+        // 매개 변수가 필요한 경우는 함수 코드블록{ }에 데이터입력이 발생되지 않는 경우
+        // - 함수내용으로 데이터를 계산하거나 출력하거나 조건식을 만들거나
+        //   하는경우에 함수자체적으로 데이터 입력이 없다면 외부로부터 데이터를
+        //   전달받아 사용해야한다.
+        //     document.write("총점" + (x + y + z));
+        // }
+
+        // print(10);  //print 함수 호출
+        // print(40);
+        // print(50);
+
+
+        // 자바스크립트에서 html태그를 제어 하려면 해당 태그를 선택해야한다.
+        // html문서에서 특정 태그를 선택하는 방법은 태그명, id, class, name 이 있다.
+        // 태그명, class, name 으로 선택하면 배열의 구조이다.
+        // id로 선택하면 객체단위인데, 단일값이다. 변수 비슷하게 사용가능.
+        // 현재 html문서에서 라는 듯으로 document
+        // 태그(엘리먼트)를 찾아라 뜻으로 getElement
+        // 태그명, class, name, id 중 어떤 거로 찾을거냐?
+        // id - ById , class- ByClassName, 태그명 - ByTagName, name - ByName
+        // 단, class, 태그명, name으로 선택할때에는 getElements 이다.
+
+
+
+        // function calc() { //함수정의
+        //     let num1 = Number(prompt("첫번째 정수"));
+        //     let num2 = Number(prompt("두번째 정수"));
+        //     print(num1, num2);
+
+        // }
+
+        // function print(num1, num2) {
+        //     sum = num1 + num2;
+        //     document.getElementById("result").innerHTML = sum;
+        // }
+
+        // 함수의 매개변수는 함수에 귀속되어있는 지역변수다
+        // 지역변수와 전역변수
+        // 전역변수는 어느곳이나 사용가능한 변수 - {  }블록에 생성하지않은 변수
+        // 전역변수의 선언은 자바스크립트 상단에 선언한다. 주로 let, const
+        // let과 var - 재할당 가능여부
+        // let a=10; let a=20; 불가
+        // var b=20; var b=2000; 가능
+        // 지역변수는 { }블록 안에서 생성된 변수이다. 또는 매개변수
+        // 지역변수가 생성된 { }블록 안에서만 사용가능
+        // 지역변수는 주로  var, let 사용
+
+        // 전역변수와 지역변수의 우선순위 - 지역변수가 우선이다.
+        // var count=10; 전역변수
+        // function increment(){
+        //      var coun=20;
+        // }
+        // function increment(count){
+        // }
+
+        // onclick="함수이름()" html태그의 이벤트에 함수호출
+
+        // let num1 = 0;
+        // let num2 = 0;
+
+
+        // function input1() {
+        //     num1 = Number(prompt("정수입력"));
+        //     document.getElementById("result").innerHTML = num1;
+        // }
+
+        // function input2() {
+        //     num2 = Number(prompt("정수입력"));
+        //     document.getElementById("result").innerHTML = num2;
+        // }
+        // function sum() {
+        //     합 = num1 + num2
+        //     document.getElementById("result").innerHTML = `${num1}+ ${num2}=${합}`;
+
+        // }
+
+        function getData() {
+
+        }
+
+
+        // function plus() {
+        //     var n1 = document.getElementById("num1").value;
+        //     var n2 = document.getElementById("num2").value;
+        //     //console.log(n1); console.log(n2);
+
+        //     n1 = parseInt(n1);
+        //     n2 = Number(n2);
+
+        //     document.querySelector("#result").innerHTML = n1 + n2;
+        //     // document.querySelectorAll(".box");  다수의 태그 선택시
+        // }
+
+        // function minus() {
+        //     var n1 = document.getElementById("num1").value;
+        //     var n2 = document.getElementById("num2").value;
+        //     n1 = parseInt(n1);
+        //     n2 = Number(n2);
+        //     document.querySelector("#result").innerHTML = n1 - n2;
+        // }
+        // function mul() {
+        //     var n1 = document.getElementById("num1").value;
+        //     var n2 = document.getElementById("num2").value;
+        //     n1 = parseInt(n1);
+        //     n2 = Number(n2);
+        //     document.querySelector("#result").innerHTML = n1 * n2;
+
+        // }
+        // function div() {
+        //     var n1 = document.getElementById("num1").value;
+        //     var n2 = document.getElementById("num2").value;
+        //     n1 = parseInt(n1);
+        //     n2 = Number(n2);
+        //     document.querySelector("#result").innerHTML = n1 / n2;
+        // }
+
+
+
+        // 또다른 방법
+
+        function getData(op) {
+            var n1 = Number(document.getElementById("num1").value);
+            var n2 = Number(document.getElementById("num2").value);
+            var 결과 = 0;  // null 값이 없다라는 뜻
+            switch (op) {
+                case '+': 결과 = n1 + n2;
+                    break;
+                case '-': 결과 = n1 - n2;
+                    break;
+                case '*': 결과 = n1 * n2;
+                    break;
+                case '/': 결과 = n1 / n2;
+                    break;
+            }
+
+            document.querySelector("#result").innerHTML = 결과;
+
+        }
+
+        function plus() {
+            getData('+');
+        }
+        function minus() {
+            getData('-');
+        }
+        function mul() {
+            getData('*');
+        }
+        function div() {
+            getData('/');
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!-- onclick="함수이름()" html태그의 이벤트에의한 함수 호출-->
+    <!-- <button onclick="calc()">계산</button>
+
+        <div id="result"></div> -->
+
+    <!--
+        <button onclick="input1()">입력1 </button>
+        <button onclick="input2()">입력2 </button>
+        <button onclick="sum()">더하기</button>
+        </button>
+    -->
+
+    <div id="input_box">
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+    </div>
+
+    <button onclick="plus()">더하기</button>
+    <button onclick="minus()">빼기</button>
+    <button onclick="mul()">곱하기</button>
+    <button onclick="div()">나누기</button>
+
+    <div id="result"></div>
+
+
+
+
+</body>
+
+</html>

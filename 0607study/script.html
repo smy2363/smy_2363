@@ -1,0 +1,126 @@
+<!--풀이-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    //문제 1.
+    //부터 100까지 숫자를 출력하세요.
+    //숫자 중에서 3의 배수에 해당하는 숫자 대신 `3배` 라고 출력
+    //8의 배수에 해당하는 숫자대신 `8배` 라고 출력
+    //3과 8의 공동의 배수 숫자 대신 `3,8배` 라고 출력
+
+    // for (var i = 1; i <= 100; i++) {
+
+    //     if (i % 3 == 0 && i % 8 == 0) {
+    //         document.write("3,8배<br>")
+    //     }
+    //     else if (i % 3 == 0) {// 3의배수
+    //         document.write(`3 배 <br>`);
+    //     }
+    //     else if (i % 8 == 0) {//8의 배수
+    //         document.write("8 배<br>");
+    //     }
+    //     else {
+    //         document.write(`${i}<br>`);
+    //     }
+    // }
+
+    //문제 2.
+    //네개 숫자로 이루어진 비밀번호 찾기
+    //각각의 숫자는 1~9 중 하나이다.
+    //네개의 숫자는 서로 중복이 없다.
+    //첫번째 숫자는 네번째 숫자보다 2 더 크다.
+    //두번째 숫자는 세번째 숫자보다 작다.
+    //네개의 비밀번호 숫자와 비밀번호 숫자역순의 합은 16456 이다.
+    //예) 비밀번호가 1234라면 1234 + 4321
+
+
+    // for (var a = 1; a <= 9; a++) {
+    //     for (var b = 1; b <= 9; b++) {
+    //         for (var c = 1; c <= 9; c++) {
+    //             for (var d = 1; d <= 9; d++) {
+    //                 if (a != b && a != c && a != d && b != c && b != d && c != d) {
+    //                     if (a == d + 2) {
+    //                         if (b < c) {
+    //                             var password = (a * 1000) + (b * 100) + (c * 10) + d;
+    //                             var rev = (d * 1000) + (c * 100) + (b * 10) + a;
+    //                             if (password + rev == 16456) {
+    //                                 document.write(`비밀번호 : ${password}`);
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    //반복문 종료시키는 방법
+    // var stop = true;
+
+
+    // for (var a = 1; a <= 9 && stop; a++) {
+    //     for (var b = 1; b <= 9 && stop; b++) {
+    //         for (var c = 1; c <= 9 && stop; c++) {
+    //             for (var d = 1; d <= 9 && stop; d++) {
+    //                 if (a != b && a != c && a != d && b != c && b != d && c != d) {
+    //                     if (a == d + 2) {
+    //                         if (b < c) {
+    //                             var password = (a * 1000) + (b * 100) + (c * 10) + d;
+    //                             var rev = (d * 1000) + (c * 100) + (b * 10) + a;
+    //                             if (password + rev == 16676) {
+    //                                 document.write(`비밀번호 : ${password}`);
+    //                                 stop = false;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+
+
+    //함수를 종료시키는 방법
+
+    for (var a = 1; a <= 9; a++) {
+        for (var b = 1; b <= 9; b++) {
+            for (var c = 1; c <= 9; c++) {
+                for (var d = 1; d <= 9; d++) {
+                    if (a != b && a != c && a != d && b != c && b != d && c != d) {
+                        if (a == d + 2) {
+                            if (b < c) {
+                                var password = (a * 1000) + (b * 100) + (c * 10) + d;
+                                var rev = (d * 1000) + (c * 100) + (b * 10) + a;
+                                if (password + rev == 16676) {
+                                    document.write(`비밀번호 : ${password}`);
+                                    return; //함수의 종료를 의미하는 예약어이다.
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!-- javascript_함수2-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function save() {
+            var text = document.querySelector("#data").value;
+            //       =document.getElementById("data").value;
+            var list = document.getElementById("list"); //list변수에 ul#list태그 저장
+            // ul태그의 객체가 list 변수에 저장
+            list.innerHTML = list.innerHTML + "<li>" + text + "</li>";
+            // createElement, appendChild, ceateTextNode (정석으로 하는법)
+
+            // list.appendChild(document.createElement("li")); -ul태그안에 새로운 li 태그삽입
+        }
+
+
+
+        // addEventListener - 이벤트 등록 시키는 함수
+        // addEventListener(이벤트명, 이벤트처리 함수 )
+
+        window.onload = function () {
+            document.getElementById("td1").addEventListener('click', save);
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <h2>오늘의 나를 칭찬하기</h2>
+
+    <input type="text" id="data">
+
+
+
+    <button onclick="save()">저장</button>
+
+    <ul id="list">
+
+    </ul>
+
+    <table id="board">
+        <tr>
+            <td id="td1"></td>
+            <td id="td2"></td>
+            <td id="td3"></td>
+        </tr>
+        <tr>
+            <td id="td4"></td>
+            <td id="td5"></td>
+            <td id="td6"></td>
+        </tr>
+
+
+    </table>
+    <style>
+        #board {
+            border-collapse: collapse;
+        }
+
+        #board tr td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+
+
+</body>
+
+</html>
