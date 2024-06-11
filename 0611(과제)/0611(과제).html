@@ -1,0 +1,29 @@
+<!--0611과제.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<body>
+    <h1>Random Numbers</h1>
+    <button id="displayBtn">Display Numbers</button>
+    <div id="numbersDisplay"></div>
+
+    <script>
+        document.getElementById("displayBtn").addEventListener("click", function () {
+            var output = "";
+            for (var i = 0; i < 25; i++) {
+                for (var j = 0; j < 4; j++) {
+                    output += Math.floor(Math.random() * 50) + 1 + "\t";
+                }
+                output += "<br>";
+            }
+            document.getElementById("numbersDisplay").innerHTML = output;
+        });
+    </script>
+</body>
+
+</html>
