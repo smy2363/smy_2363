@@ -2,27 +2,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
 <body>
     <h1>Random Numbers</h1>
     <button id="display">Display Numbers</button>
     <div id="numbers"></div>
 
     <script>
-        document.getElementById("display").addEventListener("click", function () {
-            var output = "";
+        function generateNumbers() {
+            var numbers = [];
             for (var i = 0; i < 25; i++) {
+                var row = [];
                 for (var j = 0; j < 4; j++) {
-                    output += Math.floor(Math.random() * 50) + 1 + "\t";
+                    row.push(Math.floor(Math.random() * 50) + 1);
+                }
+                numbers.push(row);
+            }
+            return numbers;
+        }
+
+        function displayNumbers() {
+            var numbers = generateNumbers();
+            var output = "";
+            for (var i = 0; i < numbers.length; i++) {
+                for (var j = 0; j < numbers[i].length; j++) {
+                    output += numbers[i][j] + "\t";
                 }
                 output += "<br>";
             }
             document.getElementById("numbers").innerHTML = output;
-        });
+        }
+
+        document.getElementById("display").addEventListener("click", displayNumbers);
     </script>
 </body>
 
