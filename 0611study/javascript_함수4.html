@@ -1,0 +1,44 @@
+<!-- javascript_함수4.html  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<script src="../0611study/static/javascript/함수4.js"></script>
+
+
+<style>
+    #score_box {
+        display: flex;
+        width: 600px;
+    }
+
+    #score_box>div {
+        padding: 10px 0;
+        width: 150px;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    #score_box>div>input {
+        width: 50%;
+        margin-left: 5px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="score_box">
+        <div><label>국어 : </label><input type="text" id="kor"></div>
+        <div><label>수학 : </label><input type="text" id="mat"></div>
+        <div><label>영어 : </label><input type="text" id="eng"></div>
+        <div><label>역사 : </label><input type="text" id="his"></div>
+    </div>
+    <button id="calc">총점계산</button>
+    <div id="total"></div>
+    <div id="avg"></div>
+</body>
+
+</html>

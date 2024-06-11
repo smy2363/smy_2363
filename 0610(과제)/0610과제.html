@@ -1,0 +1,54 @@
+<!--0610과제-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function calc(op) {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.querySelector("#num2").value);
+            var 결과 = 0;
+
+            switch (op) {
+                case '+': 결과 = num1 + num2;
+                    break;
+                case '-': 결과 = num1 - num2;
+                    break;
+                case '*': 결과 = num1 * num2;
+                    break;
+                case '/': 결과 = num1 / num2;
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = 결과;
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <hr>
+    <button onclick="calc('+')">더하기</button>
+    <button onclick="calc('-')">빼기</button>
+    <button onclick="calc('*')">곱하기</button>
+    <button onclick="calc('/')">나누기</button>
+
+    <div id="result"></div>
+
+
+</body>
+
+</html>
