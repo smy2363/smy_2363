@@ -9,11 +9,11 @@
 
 <body>
     <h1>Random Numbers</h1>
-    <button id="displayBtn">Display Numbers</button>
-    <div id="numbersDisplay"></div>
+    <button id="display">Display Numbers</button>
+    <div id="numbers"></div>
 
     <script>
-        document.getElementById("displayBtn").addEventListener("click", function () {
+        document.getElementById("display").addEventListener("click", function () {
             var output = "";
             for (var i = 0; i < 25; i++) {
                 for (var j = 0; j < 4; j++) {
@@ -21,7 +21,7 @@
                 }
                 output += "<br>";
             }
-            document.getElementById("numbersDisplay").innerHTML = output;
+            document.getElementById("numbers").innerHTML = output;
         });
     </script>
 </body>
