@@ -1,0 +1,62 @@
+<!-- jquery_test2.html  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#name").hide();
+            $("#age").hide();
+
+            $("#nameInput").click(function () { $("#name").show(); });
+            $("#ageInput").click(function () {
+                $("#age").fadeIn();
+            });
+
+            $("#enroll").on("click", function () { // 등록 버튼 클릭시 - input 값 가져와서 출력
+                let name = $("#name").val();
+                let age = parseInt($("#age").val());
+                let year = 2024 - age;
+
+                $("#nameView").text(name);
+                $("#ageView").html(age);
+                $("#yearView").html(year);
+            });
+        });
+        /*
+            이름입력 버튼과 나이입력 버튼을 각각 클릭하여 input 나타내어 이름과 나이 입력하세요.
+            등록 버튼을 클릭하여  화면에 이름, 나이, 태어난년도를 출력하세요
+        
+        
+            가위바위보만들기
+        
+            함수 3개 이상
+            시작 버튼 과 끝내기 버튼 
+            가위바위 보를 하는데  내가 그만하고싶을때까지 계속 가위바위보 하기
+            
+        
+        */
+    </script>
+</head>
+
+<body>
+    <button id="nameInput">이름입력</button> <input type="text" id="name"> <br>
+    <button id="ageInput">나이입력</button> <input type="text" id="age"> <br>
+    <button id="enroll">등록</button>
+    <hr>
+    <div>
+        이름 : <b id="nameView"></b> <br>
+        나이 : <b id="ageView"></b> <br>
+        태어난년도 : <b id="yearView"></b>
+    </div>
+
+</body>
+
+</html>

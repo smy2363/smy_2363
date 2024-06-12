@@ -1,0 +1,54 @@
+<!--   javascript_study.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        // window.onload=function(){
+        //     document.getElementById("box").innerHTML="오늘 수요일";
+
+        //     document.getElementById("open").addEventListener('click', function(){
+        //         document.getElementById("box").style.display="block";
+        //     });
+        //     document.getElementById("close").addEventListener('click',function(){
+        //         document.getElementById("box").style.display="none";
+        //     });
+        // }
+
+        $(function () {
+            //$("#box").html("오늘 수요일");
+            $("#open").on('click', function () {
+                //$("#box").toggle();  .show() - 보이기, hide()-감추기
+                //$("#box").fadeToggle(6000);   .fadeOut()- 서서히 투명도다운  , fadeIn()- 서서히 투명도업
+                $("#box").slideToggle();
+            });
+            $("#close").click(function () {
+                $("#box").slideDown();
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <button id="open">열기</button>
+    <button id="close">닫기</button>
+    <div id="box">
+        <p>오늘 점심메뉴는?</p>
+        <p>간장게장, 청국장?</p>
+        <p>돈가스?</p>
+        <p>짜장면???</p>
+        <p>머먹지..........</p>
+    </div>
+
+</body>
+
+</html>
