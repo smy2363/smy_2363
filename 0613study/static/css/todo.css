@@ -1,0 +1,87 @@
+@@ -1, 16+1, 56 @@
+
+/*  todo.css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input {
+    padding-left: 10px
+}
+
+#wrap {
+    width: 800px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+#input_wrap {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input_box {
+    display: flex;
+    gap: 10px;
+}
+
+#work {
+    width: 250px;
+}
+
+#time {
+    width: 120px;
+}
+
+#state {
+    width: 120px;
+}
+
+#enroll {
+    width: 100px;
+    background: #21dc6d;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 0;
+    color: white;
+    cursor: pointer;
+}
+
+#todo_wrap {
+    padding: 20px 50px;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+}
+
+#todoList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#todoList li {
+    line-height: 40px;
+}
+
+.todo {
+    width: 60%;
+}
+
+.todoTime {
+    width: 25%;
+}
+
+.todoState {
+    width: 15%;
+}
