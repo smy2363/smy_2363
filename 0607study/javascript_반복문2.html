@@ -1,0 +1,152 @@
+<!--  javascript_반복문2.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*
+            if( num1 > num2){
+                if( num1 > num3 ){
+
+                }else{
+
+                }
+            }
+
+        */
+
+        // while문의 중첩
+
+        // var i=1;
+        // var k=1;
+        // while( i <= 5 ){
+        //     document.write( `${i}<br>` );
+        //     //k=1; // 변수 초기화
+        //     while( k <= 3 ){
+        //         document.write( `&nbsp;&nbsp;&nbsp; ${k} <br>`);
+        //         k++;
+        //     }
+        //     k=1;
+        //     i++;
+        // }
+
+        //for문
+        /*
+                var i=1;
+                while(  i<=10  ){
+                    document.write(" <br>" + i);
+                    i++;
+                }
+        */
+        // for문과 while문의 기본 동작순서 ( 초기값, 조건식, 증감식 을 모두갖춘경우)
+        //  초기값( var i=1; ) -> 조건식비교 -> 참 -> { } 중괄호 안의 내용 실행
+        //  -> 증감식 -> 조건식 비교 -> 참 -> { } 중괄호 안의 내용 실행
+        //  -> 증감식 -> 조건식 비교 -> 거짓 -> 반복문 종료 
+
+        // for( var i=1;  i<=10;  i++ ) 
+        //     document.write(" <br>" + i);
+
+        // var i=1;
+
+        // for(  ; i<=5; i++){
+
+        // }
+
+        // for(var i=1; i<=9; i++){
+        //     document.write( `4 * ${i} = ${4*i}<br>`);
+        // }
+
+        // var sum=0;
+        // for(var i=1; i<=10; i++){
+        //     sum = sum + i;
+        // }
+        // document.write(" 1부터 10까지의 총합 :  "+ sum);
+
+
+        // 1부터  내가 입력한 숫자까지 출력 하세요.
+        //  예)   12입력했다면  화면에 1부터 12까지 출력되어야 한다.
+
+        // 1부터 내가 입력한 숫자까지 중에서 3의 배수, 7의 배수 출력하세요.
+
+        // var inputNum = Number( prompt("정수를 입력하세요 ") );
+        // for( var i=1; i<=inputNum; i++ ){
+        //     if( i%3 == 0){
+        //         document.write( i + " <br>");
+        //     }
+        //     if( i%7 == 0){
+        //         document.write( i + "<br>");
+        //     }
+        // }
+
+
+        // for( var i=1; i<=5; i++){
+        //     document.write("첫번째 반복문 "+ i+"<br>");
+        //     for( var k=1; k<=3; k++){
+        //         document.write("두번째 "+ k+"<br>");
+        //         for(){
+        //             if(){
+        //                 while(){
+
+        //                 }
+        //             }
+        //             for(){
+
+        //             }
+        //         }
+        //     }
+        // }
+
+        // 초기값 -> 조건식비교 -> 참 -> {} 실행 -> 증감식 -> 조건식비교
+        // do ~ whlie()
+        //  동작순서 :  초기값 -> {} 실행 -> 증감식 -> 조건식비교 -> 참 -> {} 실행 -> 
+        //              증감식 -> 조건식비교
+
+        var i = 1;   //   i<=5 
+        do {
+            document.write(i + "<br>");
+            i++;
+        } while (i <= 5);
+
+
+        var w = 10;
+
+
+        while (w < 10) {
+            document.write(w + "  while문<br>");
+            w--;
+        }
+
+        for (var f = 10; f < 10; f++) {
+            document.write(f + "  for문<br>");
+        }
+
+        var d = 10;
+        do {
+            document.write(d + "  do~whild문 <br>");
+            d++;
+        } while (d < 10);
+
+        // 네트워크 프로그램에 연결 부분을 do~ while로 만든다.
+        /*
+
+            do{
+            conn =  다른 컴퓨터 접속 시도 코드
+            }while(  !conn );
+
+        */
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
