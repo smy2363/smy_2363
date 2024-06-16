@@ -1,0 +1,211 @@
+<!--복습-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+
+        // 문제 1. 주유소에서 휘발유를 넣고자 한다.
+        //         휘발유는 2,000원이다.
+
+        // refueling = Number(prompt("주유 휘발유 량"));
+
+        // gasolineCost = 2000;
+
+        // gasprice = gasolineCost * refueling;
+
+        // document.write("상품명: 휘발유<br>");
+        // document.write("판매량: " + refueling + "<br>");
+        // document.write("단가: " + gasolineCost + "<br>");
+        // document.write("지불금액: " + gasprice + "<br>");
+
+        // document.write("<hr>");
+
+        //문제 2.
+        //삼각형의 넓이를 구하세요 (밑변*높이/2)
+        //밑변과 높이를  prompt를 통해 입력받으세요.
+
+        // bottom = Number(prompt("밑변 : "));
+        // height = Number(prompt("높이 :"));
+
+        // triangle = Math.floor(bottom * height / 2);
+
+        // document.write("밑변 : " + bottom + "<br>");
+        // document.write("높이 : " + height + "<br>");
+        // document.write("삼각형의 넓이는? " + triangle);
+
+
+
+
+        //산술연산자
+        // num1 = 50;
+        // num2 = 5
+
+        // console.log(num1 + num2);
+        // console.log(num1 - num2);
+        // console.log(num1 * num2);
+        // console.log(num1 / num2);
+        // console.log(num1 % num2);
+
+        //증감연산자
+
+        // add1 = 10;
+        // add1++;
+        // add1 = add1 + 1;
+        // console.log(add1);
+        // down1 = 10;
+        // down1--; add1 = add1 - 1;
+        // console.log(down1);
+
+        // add2 = 10;
+        // console.log(add2++);
+
+        // add3 = 10;
+        // result = ++add3;
+        // console.log(result);
+
+        //비교연산자
+
+        // console.log(10 > 5);
+        // console.log(10 < 5);
+        // num1 = 15;
+        // num2 = 23;
+
+        //바이킹을 타는데 키가 150이상만 탈 수 있다.
+
+        // tall = Number(prompt("당신의 키는?"));
+
+
+
+        // document.write("키는? " + tall + "<br>");
+        // document.write("탑승여부는?" + (tall >= 150));
+
+        // 신입개발자의 초봉 평균은 3100이다.
+        // 당신의 현재 연봉이 평균이상인가?
+        // 연봉 입력하여 출력
+        // document.write로 출력
+        // "true면 평균 이상이고, false면 평균 이하이다."
+
+
+        // pay = 3100;
+
+        // 연봉 = Number(prompt("당신의 현재 연봉은?"));
+
+        // document.write("당신의 현재 연봉은" + 연봉 + "<br>");
+        // document.write(pay <= 연봉);
+
+
+        //아메리카노 금액: 2000원
+        //인원 5명
+        //내 계좌 잔액이 얼마인지 입력받기(prompt로 입력받으세요)
+        //5명의 아메리카노를 구매할 수 있는가? 없는가?
+        //document.write 로 출력하세요
+
+        // 아메리카노 = 2000;
+        // 인원 = 5;
+        // 내계좌 = Number(prompt("내 통장 잔액 얼마?"));
+
+        // document.write("구매가능? : " + (아메리카노 * 인원 <= 내계좌));
+        // //   ( 내계좌    >=    아메리카노 * 인원   )
+
+        // age = 20;
+        // (age >= 30) ? document.write("30살 넘었다") : document.write("떡국 더 먹고와라");
+
+        // score = 58;
+        // 결과 = (score >= 60) ? "합격" : "불합격";
+        // document.write("<br><br>" + 결과);
+
+        // //바이킹을 탑승하려면 키가 135이상이여야 한다.
+
+        // tall = 140;
+        // result = (tall >= 135) ? "탑승가능" : "탑승불가";
+
+        // document.write("나의 키는 ? " + tall + "<br>");
+        // document.write("탑승여부 :" + result);
+
+        //하루에 총 걸음수가 6000보를 넘으면 포인트점수 10점을 받을 수 있다.
+        //이 사람의 오늘 걸음수를 입력받아 현재 포인트가 몇점인지 출력하세요.
+
+        // userPoint = 535;
+        // 걸음수 = Number(prompt("오늘 총 몇 걸음?"));
+
+        // addPoint = (걸음수 > 6000) ? 10 : 0;
+        // userPoint = userPoint + addPoint;
+        // document.write("현재포인트: " + userPoint);
+
+        // //두 정수를 입력받아 두정수 중 큰수 출력
+
+        // num1 = Number(prompt("첫번째 정수를 입력하세요"));
+        // num2 = Number(prompt("두번째 정수를 입력하세요"));
+
+        // num = (num1 > num2) ? num1 : num2;
+
+        // document.write("큰 수는?" + num);
+
+        //두정수를 입력받아 두 정수의 합이 21이라면 블랙잭,
+        //아니라면 합을 출력
+
+        // num1 = Number(prompt("첫번째 정수를 입력하시오"));
+        // num2 = Number(prompt("두번째 정수를 입력하시오"));
+
+        // num = (num1 + num2) == 21 ? "블랙잭" : num1 + num2;
+
+        // document.write("결과는 ?" + num);
+
+        //랜덤 함수를 사용하여 (1~50)중의 숫자두개를 받으세요
+        // //숫자 두개의 곱하기 값이 1200이상이면 '큰수', 아니라면 '작은수'라고 출력하세요
+
+        // num1 = Math.floor(Math.random() * 50) + 1;
+        // num2 = Math.floor(Math.random() * 60) + 1;
+
+        
+
+        // num = (num1 * num2 > 1200) ? "큰수" : "작은수";
+
+        // document.write("결과는?" + num);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+
+<body>
+
+</body>
+
+</html>
