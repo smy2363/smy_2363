@@ -115,7 +115,7 @@ function start() {
 
 function init() { // 25개 숫자 배열에 저장
     while (bingo.length != 25) {
-        var tmp = Math.floor(Math.random() * 50) + 1;
+        var tmp = Math.floor(Math.random() * 100) + 1;
         if (bingo.indexOf(tmp) == -1)
             bingo.push(tmp);
     }
