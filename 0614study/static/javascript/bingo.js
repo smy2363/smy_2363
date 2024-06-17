@@ -17,6 +17,7 @@ $(function () {  // 브라우저에 모두 표시되면 실행 되는 함수 -wi
 
 
 
+
 });
 
 function bingoCheck() {
@@ -34,6 +35,52 @@ function bingoCheck() {
         가로 세로 대각선 빙고인지 확인하는 내용과
         빙고가 5개 완성되면  게임 끝나게 하기 
     */
+    console.log(bingo);
+
+    var 가로 = 0;
+    var 세로 = 0;
+    var end = 0;
+    var 대각선1 = 0;
+    var 대각선2 = 0;
+
+
+    for (var i = 0; i < 5; i++) {   //줄바꿔주는것
+        for (var k = 0; k < 5; k++) {  //5칸확인
+            if (bingo[i * 5 + k] == 0) 가로++;
+            if (bingo[k * 5 + i] == 0) 세로++;
+        }
+
+        if (bingo[i * 6] == 0) 대각선1++;  //0, 6, 12, 18, 24
+        if (bingo[i * 4 + 4] == 0) 대각선2++; //4, 8, 12, 16, 20
+
+        if (대각선1 == 5) end++;
+        if (대각선2 == 5) end++;
+        if (가로 == 5) end++;          //5개됐을때 1빙고 카운트 올려주는것
+        if (세로 == 5) end++;
+
+        가로 = 0;
+        세로 = 0;
+    }
+
+    endCount = end;
+    $("#ok").text(endCount);
+
+    if (endCount == 5) {
+        alert("빙고완성!!");
+        endGame();
+    }
+
+    else if (endCount > 5) {
+        alert("게임 오버!!!");
+        endGame();
+    }
+}
+
+function endGame() {
+    $(".num").off();  // 모든이벤트 제거 .off('click'); ->특정이벤트 제거
+
+    // 플레이 타임 멈추기
+    clearInterval(time);  // 특정 setInterval을 종료시키기
 }
 
 function start() {
