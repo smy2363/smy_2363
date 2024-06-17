@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        const board = [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        ];
+
+        let x = 0, y = 0;
+
+        $(function () {
+            let out = "<table>";
+
+            for (let i = 0; i < board.length; i++) {
+                out += "<tr>";
+                for (let k = 0; k < board[i].length; k++) {
+                    let tdClass = "wall";
+                    if (board[i][k] == 0) tdClass = "blank";
+                    if (board[i][k] == 2) {
+                        tdClass = "me";
+                        y = i;
+                        x = k;
+                    }
+                    out += `<td class="${tdClass}"></td>`;
+                }
+                out += "</tr>";
+            }
+
+            out += "</table>";
+            $("#wrap").html(out);
+        });
+
+        $(document).keyup(function (event) {
+            var key = event.keyCode;
+
+            let newX = x;
+            let newY = y;
+
+            switch (key) {
+                case 87: // W
+                    newY--;
+                    break;
+                case 65: // A
+                    newX--;
+                    break;
+                case 83: // S
+                    newY++;
+                    break;
+                case 68: // D
+                    newX++;
+                    break;
+            }
+
+            // Check boundaries and walls
+            if (board[newY][newX] == 0) {
+                board[y][x] = 0;
+                $("td").eq(y * 21 + x).removeClass("me").addClass("blank");
+                y = newY;
+                x = newX;
+                board[y][x] = 2;
+                $("td").eq(y * 21 + x).removeClass("blank").addClass("me");
+            }
+        });
+    </script>
+
+    <style>
+        #wrap table {
+            border-collapse: collapse;
+        }
+
+        #wrap table tr td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+        }
+
+        .wall {
+            background: black;
+        }
+
+        .me {
+            background: red;
+        }
+
+        .blank {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap"></div>
+</body>
+
+</html>
