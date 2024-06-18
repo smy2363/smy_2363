@@ -17,14 +17,45 @@
 
 <body>
 
+    <div id="buttonWrap">
+        <button id="game">시작</button>
+        <button id="record">전적</button>
+    </div>
+
+
     <div id="wrap">
-        <div id="comArea">
+        <div id="comArea" class="area">
+            <div class="rpsImg">
+                <img id="comImg">
+            </div>
 
         </div>
-        <div id="userArea">
+        <div id="userArea" class="area">
+            <div class="rpsImg">
+                <div class="userImg"><img src="./static/image/scissors.png" alt=""></div>
+                <div class="userImg"><img src="./static/image/rock.png" alt=""></div>
+                <div class="userImg"><img src="./static/image/paper.png" alt=""></div>
+            </div>
 
         </div>
     </div>
+
+    <div id="modal" style="display:none;">
+        <div id="modalBackground"></div>
+        <div id="modalData">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th class="user">유저</th>
+                        <th class="com">컴퓨터</th>
+                        <th class="outcome">결과</th>
+                    </tr>
+                </thead>
+                <tbody id="data"></tbody>
+            </table>
+        </div>
+    </div>
+
 
 </body>
 

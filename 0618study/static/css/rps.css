@@ -1,0 +1,183 @@
+/*rps.css*/
+
+/*    배경없이 이미지만 작게 가져온경우 이렇게 설정해야함
+<div id="vs"> <img> </div> (wrap)위에 적어야함.
+#vs{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+} 
+*/
+* {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+body {
+    margin: 0;
+}
+
+#buttonWrap {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    width: 200px;
+    display: flex;
+    column-gap: 5px;
+    justify-content: center;
+}
+
+#buttonWrap button {
+    width: 50%;
+    border: 0;
+    font-size: 20px;
+    border-radius: 7px;
+    padding: 7px 0;
+}
+
+#game {
+    background: pink;
+
+}
+
+#record {
+    background: rgb(73, 216, 204);
+}
+
+#wrap {
+    background: url(../image/vs.png) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    /*브라우저의 화면에 높이를 꽉채울때 사용함*/
+    display: flex;
+    min-width: 900px;
+}
+
+#wrap.area {
+    padding: 10%;
+    position: relative;
+}
+
+#wrap .area .rpsImg {
+    width: 100%;
+}
+
+#comArea {
+    display: flex;
+    align-items: center;
+
+}
+
+#wrap #userArea {
+    padding: 5%;
+}
+
+#userArea .rpsImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#userArea .userImg {
+    width: 50%;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+#userArea .userImg:hover {
+    border: 2px solid red;
+}
+
+#comImg {
+    width: 75%;
+}
+
+.result {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 100px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* 모달 스타일 */
+#modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 110;
+}
+
+#modalBackground {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #999;
+    opacity: 0.4;
+}
+
+#modalData {
+    position: absolute;
+    width: 500px;
+    padding: 15px;
+    background-color: white;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user {
+    width: 35%
+}
+
+.com {
+    width: 35%;
+}
+
+.outcom {
+    width: 35%;
+}
+
+#data td {
+    line-height: 40px;
+    text-align: center;
+    border-top: 1px solid #aaa;
+}
+
+#data td img {
+    display: block;
+    height: 35px;
+    width: 35px;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* 미디어쿼리 스타일 */
+
+@media screen and(min-width:1450px) {
+    #userArea .userImg {
+        width: 30%;
+    }
+}
