@@ -58,21 +58,21 @@
             let newY = y;
 
             switch (key) {
-                case 87: // W
+                case 87:
                     newY--;
                     break;
-                case 65: // A
+                case 65:
                     newX--;
                     break;
-                case 83: // S
+                case 83:
                     newY++;
                     break;
-                case 68: // D
+                case 68:
                     newX++;
                     break;
             }
 
-            // Check boundaries and walls
+
             if (board[newY][newX] == 0) {
                 board[y][x] = 0;
                 $("td").eq(y * 21 + x).removeClass("me").addClass("blank");

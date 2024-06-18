@@ -9,9 +9,7 @@
     <!-- jquery CDN-->
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
     <script>
-
         const board = [  // 14행 21열
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -29,9 +27,7 @@
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         ];
         let x = 0, y = 0;
-
         $(function () {
-
             let out = "<table>";
 
             for (var i = 0; i < board.length; i++) {
@@ -46,55 +42,43 @@
                         x = k;
                     }
                     out += `<td class="${tdClass}">`;
-
                     out += "</td>";
                 }
-
                 out + "</tr>";
             }
 
             out += "</table>";
             $("#wrap").html(out);
-
         });
-
         $(document).keyup(function (event) {
             // w - 87 , a - 65, s - 83, d- 68
             var key = event.keyCode;
             //  alert( typeof key);
 
-            let newX = x;
-            let newY = y;
+            var stepx = x, stepy = y; //이동할 위치 표현변수
+            board[y][x] = 0;
+            $("td").eq(y * 21 + x).removeClass("me");
+            $("td").eq(y * 21 + x).addClass("blank");  //현재 위치에 클래스명 blank 로변경
 
-            if (board)
+            switch (key) {
 
+                case 87: stepy--; break;
+                case 65: stepx--; break;
+                case 83: stepy++; break;
+                case 68: stepx++; break;
+            }
+            if (board[stepy][stepx] != 1) {
+                x = stepx;
+                y = stepy;
+            }
 
-                switch (key) {
-                    case 87:
-                        board[y][x] = 0;
-                        $("td").eq(y * 21 + x).removeClass("me");
-                        $("td").eq(y * 21 + x).addClass("blank");  //현재 위치에 클래스명 blank 로변경
-                        y--;
-                        board[y][x] = 2;
-                        $("td").eq(y * 21 + x).removeClass("blank");
-                        $("td").eq(y * 21 + x).addClass("me");// 이동할 위치에 클래스명 me로 변경
-                        break;
-                    case 65:
+            board[y][x] = 2;
+            $("td").eq(y * 21 + x).removeClass("blank");
+            $("td").eq(y * 21 + x).addClass("me");// 이동할 위치에 클래스명 me로 변경
 
-                        break;
-                    case 83:
-
-                        break;
-                    case 68:
-
-                        break;
-                }
         });
 
-
-
     </script>
-
     <style>
         #wrap table {
             border-collapse: collapse;
@@ -118,13 +102,11 @@
             background-color: white;
         }
     </style>
-
 </head>
 
 <body>
 
     <div id="wrap"></div>
-
 </body>
 
 </html>
