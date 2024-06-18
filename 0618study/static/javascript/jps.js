@@ -10,7 +10,7 @@ $(function () { // window.onload - 브라우저 화면표시 완료
     // 전적 배열 초기화 세팅
 
     let storageData = JSON.parse(localStorage.getItem("record"));
-    if (storageData) { //localStorage 에 저장되 ㄴ값이 있냐?
+    if (storageData) { //localStorage 에 저장된 값이 있냐?
         record = [new Array(), new Array(), new Array()];
         //      유저     ,   컴,   결과
     } else {
