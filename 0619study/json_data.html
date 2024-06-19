@@ -1,0 +1,69 @@
+<!--json_data.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        let student = { name: "이순신", age: 19, tall: 172 };
+        document.write(student.name);
+
+        // JSON.stringify -> 자바스크립트 객체를 문자열로 변환
+        // JSON.parse -> 문자열을 자바스크립트 객체로 변환
+
+        let str = JSON.stringify(student);
+        document.write("<br>" + str);
+
+        let std = JSON.parse(str);
+        document.write("<br>" + std.age);
+
+        //student.json
+
+        //xml 
+        const xml = new XMLHttpRequest();
+        xml.onload = function () {
+            var std = JSON.parse(this.responseText);
+            view(std);
+            document.write(std.name);
+            document.write(std.age);
+            document.write(std.tall);
+            // document.write(this.responseText);
+        }
+        xml.open("GET", "student.json"); //받기
+        xml.send(); //보내기
+
+
+        //대전 광역시 중구의 광역시 코드와 시군구 코드를 출력하세요
+
+
+
+        function view(std) {
+            for (var i = 0; i < std.length; i++) {
+                if (std[i].법정동명.indexOf("대전광역시") != -1) {
+                    if (std[i].시군구코드.indexof("중구") != -1) {
+                        document.write(std[i].법정동명 + " " + std[i].광역시코드 + " " + std[i].시군구코드 + "<br>");
+                    }
+                }
+            }
+        }
+
+
+
+        //대전 광역시 중구의 광역시 코드와 시군구 코드를 출력하세요
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

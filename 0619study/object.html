@@ -1,0 +1,201 @@
+<!--object.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        /*
+            let arr=[];
+            arr.push(데이터);
+            arr.push(데이터);
+            for(var i=0; i<arr.length;i++){
+            arr[i] 출력 또는 계산
+            }
+        
+        */
+
+
+        // 배열  - 직접 손으로 만질수 있는 물건, 변수, 10, "이순신"
+        //      - 모양, 행동을 가지고 있는 대상
+        //      - 데이터, 함수를 가질수 있는 대상
+        //   모니터 객체
+        //      출력, 전원버튼, 메뉴 -> 색, 비율, 초기화, 음량
+        //      모델명, 제조사, 
+
+        // 배열 - a=[]; , b=new Array();
+        // 데이터   -> 배열의 공간에 저장되어 있는 값
+        //         -> 배열의 크기   
+        // 기능    -> push(), splice(), indexOf(), .....
+
+        // html크기는 자바스크립트에서 객체이다.
+
+        window.onload = function () {
+
+        }
+
+        // 사용자 객체 생성 (개발자가 직접 만든 개체)
+        // name = "이순신";
+        // age = 34;
+        // let 학생 = { name: "이순신", age: 34, addr: "여수" }
+        // let 학생1 = { name: "김유신", age: 24, addr: "경주" }
+
+        // console.log(학생.name);
+        // console.log(학생1.name);
+
+        // //객체 생성 방법 2
+        // //생성자함수를 통해 객체 생성
+        // function book(t, a, y) {
+        //     this.title = t;  // this는 생성된 객체를 의미한다.
+        //     this.author = a;
+        //     this.year = y;
+        // }
+
+        // book1 = new book("자바", "홍길동", 2024); //생성자함수를 통해 객체 생성 방법 new연산자로 새로운 객체를 만들겠다
+        // // book()생성자함수 호출
+
+        // book2 = new book("html", "김유신", 2019);
+        // document.write(book1.title);
+        // document.write(book2.year);
+
+        // 영화 - 영화제목, 감독, 장르에 대해 저장할수 있는 생성자함수와 객체 2개를 만드세요
+
+        function movie(name, director, genre) {
+            this.name = name;
+            this.director = director;
+            this.genre = genre;
+            // this.print = function () {
+            //     document.write(`<p><b>${this.name}</b><span>${this.director}</span>
+            //         <span>${this.genre}</span></p>`);
+            // };  //메서드
+        }
+
+        movie.prototype.print = function () {
+            document.write(`<p><b>${this.name}</b><span>${this.director}</span>
+                <span>${this.genre}</span></p>`);
+        }; // 메서드
+
+
+        movie.prototype.국가 = "한국";
+        console.log(movie);
+        document.write(movie.name + "<br>");
+        document.write(movie.국가 + "<br>");
+
+        let m = new movie("범죄도시", "홍길동", "액션");
+        m.국가 = "미국";
+        document.write(m.name + "<br>");
+        document.write(m.국가 + "<br>");
+
+        let m2 = new movie("원더랜드", "박보검", "드라마");
+        document.write(m2.name + "<br>");
+        document.write(me.국가 + "<br>");
+
+
+        //자바스크립트의 꽃중의 꽃  - prototype
+
+
+
+
+        // Array.prototype.abc = function () { alert("프로토타입으로 만든 함수") };
+
+        // // document.getElementById("box").addEventListener('click', function () { });
+
+
+        // Document.prototype.getId = function (id, func) {
+        //     return document.getElementById(id).addEventListener('click', func);
+        // };
+
+        // Document.prototype.aa = 100;
+
+        // alert(document.aa);
+
+        // Document.getId("box", function () { });
+
+        // let word = new Array();
+        // word.abc();
+
+
+
+        // //movieList[0] == this
+        // //movieList[1] ==this
+        // //movieList[0].print();
+
+        // movie1 = new movie("범죄도시4", "허명행", "액션");
+        // movie2 = new movie("그녀가 죽었다", "김세휘", "미스터리");
+        // document.write(movie1.director);
+        // document.write(movie2.name);
+
+
+        // // let movieList=new Array();
+        // let movieList = []; //movie 객체를 저장할 배열
+
+        // movieList.push(new movie("저수지의개들", "쿠엔틴", "느와르"));
+        // movieList.push(new movie("범죄도시4", "허명행", "액션"));
+        // movieList.push(new movie("인사이드 아웃2", "켈리", "애니메이션"));
+        // movieList.push(new movie("원더랜드", "김태용", "드라마"));
+        // movieList.push(new movie("드라이브", "박동희", "스릴러"));
+
+        // //배열의 인덱스 - 배열과 같은 구조를 가져야 한다.
+        // //             - 모든 공간이 연속적이며, 같은 크기의 공간이여야 한다.
+
+        // document.write(movieList[3].name + "<br>");
+
+        // for (var i = 0; i < movieList.length; i++) {
+        //     movieList[i].print();
+        //     document.write("<br>" + movieList[i].name);
+        //     document.write(movieList[i].director + " " + movieList[i].genre + "<br>");
+        // }
+
+        // document.write("<br>" + movieList[0]);
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <!--<div id="box" class="area" onmouseover="javascript:alert('마우스왔다');">
+        나는 dive이다.-->
+    </div>
+
+</body>
+
+</html>
+<!-- <script>
+
+    // let d = document.getElementById("box");
+    // console.log(d);
+
+    // document.write(d.innerHTML);  // 객체에서 접근연산자이다.
+    // // 객체 내부의 변수 또는 함수에 접근한다.
+    // document.write(d.id);
+    // document.write(d.className);
+    // let div = document.querySelector("#box");
+    // console.log(div);
+    // let box = $("#box");
+    // console.log(box);
+    // console.log(d.localName);
+    // d.className = "box1";
+    // d.hidden = true;
+
+
+
+
+
+</script> -->
