@@ -1,0 +1,159 @@
+<!--json_data2.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        /*
+            자바스크립트 객체
+            객체는 데이터(속성)과 함수(기능)으로 구성되어있다.
+            내장객체로는  Array, Math, Number, Document, window 등등
+
+            사용자 정의 객체
+            {name:'이순신', age:19} - 객체리터럴
+            function book(title, aut, pyear){  생성자함수로 객체 생성
+                this.title=title;
+                this.aut=aut;
+                this.pyear=pyear;
+            }
+            자바스크립트에서 객체는 key:value의 구조로 속성(데이터)을 정의한다.
+            key는 중복되면 안된다. 이름, 문자열, 숫자로 키를 정의할 수 있다.
+            변수이름처럼 이름으로 정의하는게 좋다.
+            value는 중복가능, 숫자, 문자열, 배열, 객체, 함수
+
+            let people={name:'이순신', age:19};
+            people.name -> 이순신
+            people.age -> 19
+            people[name] -> 이순신
+            people[age] -> 19
+
+            json - javascript object notation
+            웹에서 사용할 데이터를 경량으로 표현하기위해 사용한다.
+            자바스크립트 객체를 문자열로 변환 시켜준것이다.
+
+            let people={name:'이순신', age:19};
+
+            people를 json으로 변환하면
+            "{"name":'이순신', "age":19}"
+            객체를 json으로 변환 하는 방법은 JSON.stringify(people);
+            
+            json을 객체로 변환하는 방법은 JSON.parse(json값);
+
+
+        */
+
+        // 종량제봉투.json
+        // 종량제봉투판매소정보 key이고 value에 배열의 구조로 실제 필요한 객체들이있다.
+
+
+        $(function () { //window.onload
+            const xml = new XMLHttpRequest();
+            xml.onload = function () { //json 파일 모두 열기 되면 실행
+                var data = this.responseText; // json파일의 내용을 가져와서 data에 저장, 문자열로 저장되어있다.
+                data = JSON.parse(data); //json을 자바스크립트 객체로 변환하여 data에 저장
+                console.log(data.종량제봉투판매소정보);
+                output(data.종량제봉투판매소정보);
+            }
+
+            xml.open('GET', '종량제봉투.json'); // 받기
+            xml.send(); // 보내기
+        });
+
+        function output(data) {
+
+        }
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="inputBox">
+            <input type="text" id="search" placeholder="검색어를 입력하세요">
+        </div>
+        <div id="dataList">
+            <table id="dataTable">
+                <thead class="dataHead">
+                    <tr>
+                        <th class="동">동</th>
+                        <th class="판매소명">판매소명</th>
+                        <th class="주소">주소</th>
+                        <th class="전화번호">전화번호</th>
+                    </tr>
+                </thead>
+                <tbody id="dataField"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        #wrap {
+            width: 1000px;
+            margin: 50px auto;
+        }
+
+        .inputBox {
+            padding: 10px 0;
+        }
+
+        #search {
+            width: 300px;
+            font-size: 25px;
+            padding: 10px;
+            border: 2px solid #aaa;
+            border-radius: 10px;
+        }
+
+        #dataList {
+            padding: 15px 0;
+            border-top: 1px solid #aaa;
+        }
+
+        #dataTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .동 {
+            width: 15%;
+        }
+
+        .판매소 {
+            width: 35%;
+        }
+
+        .주소 {
+            width: 30%;
+        }
+
+        .전화번호 {
+            width: 20%;
+        }
+
+        #datafield td {
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+
+
+</body>
+
+</html>
