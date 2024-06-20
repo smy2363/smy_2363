@@ -1,0 +1,137 @@
+<!--json_data3.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        /*
+            폭염.json 파일의 내용 자바스크립트로 가져와서
+            브라우저 화면에 출력하기
+            이쁘고 깔끔하고 심플하게
+        */
+
+
+        $(function () {
+            const xml = new XMLHttpRequest();
+            xml.onload = function () {
+                var data = this.responseText;
+                data = JSON.parse(data);
+                console.log(data);
+                output(data);
+            }
+
+            xml.open('GET', '폭염.json');
+            xml.send();
+
+            $("#search").on('keyup', search);
+        });
+
+        function search() {
+            var value = $(this).val();
+            $("#dataField tr").filter(function () {
+                $(this).toggle($(this).text().indexOf(value) != -1);
+            });
+        }
+
+        function output(data) {
+            for (var i = 0; i < data.length; i++) {
+                $("#dataField").append(`
+                <tr>
+                    <td>${data[i]['연도별']}</td>
+                    <td>${data[i]['서울(일)']}</td>
+                    <td>${data[i]['강릉(일)']}</td>
+                    <td>${data[i]['대전(일)']}</td>
+                    <td>${data[i]['대구(일)']}</td>
+                    <td>${data[i]['광주(일)']}</td>
+                    <td>${data[i]['부산(일)']}</td>
+                    <td>${data[i]['전국일평균(일)']}</td>
+                </tr>
+                `);
+            }
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="warp">
+        <div class="inputBox">
+            <input type="text" id="search" placeholder="연도를 입력하세요"></input>
+        </div>
+        <div id="dataList">
+            <table id="dataTable">
+                <thead id="dataHead">
+                    <tr>
+                        <th class="연도별">연도별</th>
+                        <th class="서울">서울(일)</th>
+                        <th class="강릉">강릉(일)</th>
+                        <th class="대전">대전(일)</th>
+                        <th class="대구">대구(일)</th>
+                        <th class="광주">광주(일)</th>
+                        <th class="부산">부산(일)</th>
+                        <th class="전국일평균">전국일평균(일)</th>
+                    </tr>
+                </thead>
+                <tbody id="dataField"></tbody>
+            </table>
+        </div>
+    </div>
+    <style>
+        #wrap {
+            width: 1500px;
+            margin: 50px auto;
+        }
+
+        .inputBox {
+            padding: 15px 0;
+        }
+
+        #search {
+            width: 300px;
+            font-size: 25px;
+            padding: 5px;
+            border: 2px solid #aaa;
+            border-radius: 10px;
+        }
+
+        #dataList {
+            padding: 20px 0;
+            border-top: 1px solid #aaa;
+        }
+
+        #dataTable {
+            width: 100%;
+        }
+
+        .연도별 {
+            width: 15%;
+        }
+
+        .서울 .강릉 .대전 .대구 .광주 .부산 {
+            width: 11.5%;
+        }
+
+        .전국일평균 {
+            width: 15%;
+        }
+
+        #dataField td {
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>

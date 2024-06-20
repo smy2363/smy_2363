@@ -1,0 +1,153 @@
+<!--json_data3_1-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        /*
+        폭염.json 파일의 내용 자바스크립트로 가져와서
+        브라우저 화면에 출력하기
+        이쁘고 깔끔하고 심플하게
+        */
+
+        $.getJSON("폭염.json", function (data) { // getJSON을 사용하면 JSON.parse가지 해준다.
+            show(data);
+        });
+
+        $(function () {
+            // $("#day").on('keyup', heatFilter); //input태그에 키보드로 입력시
+            // $("#day").on('change', heatFilter);//input태그에 업다운 버튼 클릭하여 변경시
+            // $("#location").on('change', heatFilter); //select태그의 값 선택시
+
+            $("#more").on('click', heatFilter);
+            $("#less").on('click', heatFilter);
+        });
+
+        function moreFunc(a, b) { // 이상 버튼 클릭하면 동작할 함수 >=
+            return a >= b;
+
+        }
+
+        function lessFunc(a, b) { // 이하 버튼 클릭하면 동작할 함수 <=
+            return a <= b;
+        }
+
+
+        function heatFilter() {
+            var func = moreFunc; //함수의 이름을 변수에 저장하여 함수호출 가능
+            if ($(this).text() === "이하") func = lessFunc;   // 함수의 이름은 메모리 주소이고 
+            // 함수호출은 메모리주소를 통해 실행시키기 때문에 변수에 담아서 호출하는게 가능
+            var value = $("#day").val();
+            var loc = $("#location").val();
+            if (value != 0) {
+                let li = $("#list li");
+                loc = Number(loc); //서울 선택시 loc에는 2 저장, 대전 선택시 loc에는 4저장
+                for (var i = loc - 1; i < li.length; i = i + 8) {
+
+                    if (func(Number(li.eq(i).text()), Number(value))) {
+
+                        for (var k = i - (loc - 1); k <= i + 8 - loc; k++) {// 선택한 지역이 조건에 맞지않으면
+                            li.eq(k).toggle(true);                              // 해당줄의 전체 li태그 감추기
+                        }
+                    } else {
+                        for (var k = i - (loc - 1); k <= i + 8 - loc; k++) {
+                            li.eq(k).toggle(false);
+
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        //     $("#list li").filter(function () {
+        //         $(this).toggle($(this).text().indexOf(value) != -1);
+        //     });
+        // }
+
+        function show(data) {
+            for (var i = 0; i < data.length; i++) {
+                $("#list").append(`
+                <li>${data[i].연도별}</li>
+                <li>${data[i][`서울(일)`]}</li>
+                <li>${data[i][`강릉(일)`]}</li>
+                <li>${data[i][`대전(일)`]}</li>
+                <li>${data[i][`대구(일)`]}</li>
+                <li>${data[i][`광주(일)`]}</li>
+                <li>${data[i][`부산(일)`]}</li>
+                <li>${data[i][`전국일평균(일)`]}</li>
+                `);
+            }
+        }
+
+
+    </script>
+    <style>
+        h3 {
+            height: 40px;
+            border-bottom: 1px solid #aaa;
+        }
+
+        h3 b {
+            font-size: 20px;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+        }
+
+
+        #list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 800px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #list>li {
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="filter">
+        <select id="location">
+            <option value="0">전국</option>
+            <option value="2">서울</option>
+            <option value="3">강릉</option>
+            <option value="4">대전</option>
+            <option value="5">대구</option>
+            <option value="6">광주</option>
+            <option value="7">부산</option>
+        </select>
+
+        <input type="number" id="day" value="0" style="width:40px; padding-left:10px;">일
+        <button id="more">이상</button>
+        <button id="less">이하</button>
+
+    </div>
+
+
+
+    <h3><b>연도별</b><b>서울</b><b>강릉</b><b>대전</b><b>대구</b><b>광주</b><b>부산</b><b>전국평균</b></h3>
+    <ul id="list"></ul>
+
+</body>
+
+</html>
