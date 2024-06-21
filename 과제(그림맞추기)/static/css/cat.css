@@ -43,3 +43,11 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+
+
+#score #stage {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+}

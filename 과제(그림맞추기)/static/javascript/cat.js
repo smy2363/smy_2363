@@ -2,23 +2,47 @@
 
 
 window.onload = function () {
-    const BOARD_SIZE = 24; // 24장의 카드
+    const BOARD_SIZE = 12; // 12장의 카드
     const IMAGE_COUNT = 12; //  이미지 12개
     const IMAGE_PATH = 'static/image/'; // 이미지 경로
+    const TOTAL_STAGE = 3;  // 총 스테이지 수
     let firstCard = null; // 첫 번째 선택 카드
     let secondCard = null; // 두 번째 선택 카드
     let noClick = false; // 클릭 방지
+    let score = 0; //점수
+    let matches = 0; //맞춘 카드 수
+    let stage = 1; //현재 스테이지
+    let boardSize = BOARD_SIZE; //현재 스테이지의 카드 수
+
+
+
+    //점수 업데이트
+    function updateScore() {
+        document.getElementById('score').textContent = `점수:${score}`;
+    }
+
+    //스테이지 업데이트
+    function updateStage() {
+        document.getElementById('stage').textContent = `스테이지:${stage}`;
+    }
+
+
 
     // 카드 만들기
     function catCard() {
         let catCards = [];
-        while (catCards.length < IMAGE_COUNT) {
-            let cardNumber = getRandom(0, IMAGE_COUNT);
+        let nowImageCount = Math.min(IMAGE_COUNT + (stage - 1), 24);
+        while (catCards.length < nowImageCount) {
+            let cardNumber = getRandom(0, nowImageCount);
             if (!catCards.includes(cardNumber)) {
                 catCards.push(cardNumber);
             }
         }
-        return [...catCards, ...catCards];
+        let catDeck = [];
+        for (let i = 0; i < boardSize / 2; i++) {
+            catDeck.push(catCards[i % catCards.length]);
+        }
+        return [...catDeck, ...catDeck];
     }
 
     // 랜덤 숫자
@@ -71,7 +95,23 @@ window.onload = function () {
             if (firstCard.dataset.number === secondCard.dataset.number) {
                 firstCard.classList.add('matched');
                 secondCard.classList.add('matched');
+                score += 10;  //점수 증가
+                matches += 1;  //맞춘 카드 수 증가
+                updateScore(); //점수 업데이트
                 resetSelection();
+
+                // 모든 카드를 맞췄을 때
+
+                if (matches === boardSize / 2) {
+                    if (stage < TOTAL_STAGE) {
+                        stage += 1; //다음 스테이지로 이동
+                        boardSize += 6; //각 스테이지마다 카드 수를 6장씩 증가
+                        setTimeout(nextStage, 3000); //3초 후에 다음 스테이지로 이동
+                    } else {
+                        alert('모든 스테이지 클리어!!');
+                        resetGame();
+                    }
+                }
             } else {
                 noClick = true;
                 setTimeout(() => {
@@ -88,6 +128,11 @@ window.onload = function () {
     function resetSelection() {
         firstCard = null;
         secondCard = null;
+    }
+
+    //다음 스테이지로 이동
+    function nextStage() {
+        startGame();
     }
 
     // 카드 한 장씩 천천히 보이게 하기
@@ -111,9 +156,24 @@ window.onload = function () {
 
     // 게임 시작
     document.getElementById('start').onclick = function () {
-        const cardDeck = catCard();
-        shuffleArray(cardDeck);
-        renderBoard(cardDeck);
+        const catDeck = catCard();
+        shuffleArray(catDeck);
+        renderBoard(catDeck);
         backCards();
+        matches = 0; //맞춘 카드 수 초기화
+        updateScore(); //점수 업데이트
+        updateStage(); //스테이지 업데이트
     };
+
+    // 게임 초기화
+    function resetGame() {
+        score = 0;
+        stage = 1;
+        boardSize = BOARD_SIZE;
+        startGame();
+    }
+
+    document.getElementById('start').onclick = startGame;
+
+
 };
