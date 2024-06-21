@@ -7,7 +7,7 @@ window.onload = function () {
     const IMAGE_PATH = 'static/image/'; // 이미지 경로
     let firstCard = null; // 첫 번째 선택 카드
     let secondCard = null; // 두 번째 선택 카드
-    let preventClick = false; // 클릭 방지
+    let noClick = false; // 클릭 방지
 
     // 카드 만들기
     function catCard() {
@@ -57,7 +57,7 @@ window.onload = function () {
 
     // 카드 클릭 이벤트
     function onCardClick(event) {
-        if (preventClick) return;
+        if (noClick) return;
         const clickedCard = event.currentTarget;
         if (clickedCard.classList.contains('matched')) return;
 
@@ -73,12 +73,12 @@ window.onload = function () {
                 secondCard.classList.add('matched');
                 resetSelection();
             } else {
-                preventClick = true;
+                noClick = true;
                 setTimeout(() => {
                     firstCard.querySelector('img').style.visibility = 'hidden';
                     secondCard.querySelector('img').style.visibility = 'hidden';
                     resetSelection();
-                    preventClick = false;
+                    noClick = false;
                 }, 500); // 0.5초 후에 카드 숨기기
             }
         }
