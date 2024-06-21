@@ -1,0 +1,96 @@
+<!--form1.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form method="GET" action="http://www.a.com/save.html" enctype="multipart/form=data">
+
+        <input type="text"><br> <!-- text:(영어, 숫자, 한글 등등) 입력 필드 -->
+        <input type="password"><br> <!-- password : 입력한 텍스트를 숨겨주는 비밀번호 필드 -->
+        <input type="radio" name="gender" value="남자">남자<input type="radio" name="gender">여자
+        <br><!-- 그룹을 설정하여 하나만 선택할 수 있다. -->
+        <input type="checkbox" name="hob" value="영화">영화<input type="checkbox" name="hob">게임
+        <input type="checkbox" name="int">주식<input type="checkbox" name="int">음악
+
+        <br><!-- 다중 선택이 가능하다 -->
+
+
+        <input type="color"><br> <!-- 색상을 선택할 수 있다. -->
+
+        <input type="date"><br><!-- 날짜 선택 (년,월,일) -->
+
+        <input type="datetime-local"><br><!-- 날짜 및 시간 선택(년,월,일,시,분)-->
+
+        <input type="time"><br><!-- 시간 선택(시,분) -->
+
+        <input type="month"><br><!-- 날짜 선택(년, 월,)-->
+
+        <input type="email"><br><!-- 이메일 입력 필드, 브라우저에서 기본형식 검증 -->
+
+        <input type="number" min="0" max="10" step="2"><br><!-- 숫자입력 필드, 값의 범위 단계 지정 가능-->
+
+        <!-- min-최소값, max-최대값, step - 증가값 -->
+
+
+        <input type="search"><br> <!-- 검색필드 -->
+
+        <input type="tel"><br> <!-- 전화번호 입력 필드 -->
+
+        <input type="week"><br><!-- 년과 주를 선택 -->
+
+        <input type="file"><br><!-- 파일업로드 필드 -->
+
+        <input type="image" src="https://loremflickr.com/50/50"><br><!-- 이미지를 클릭하여 제출 -->
+
+        <input type="url"><br><!-- 주소입력 필드, url형식 검증-->
+
+        <input type="range" min="10" max="20" step="5"><br><!-- 슬라이더 컨트롤 -->
+        <!-- min-최소값, max=최대값, step-증가값 -->
+
+        <input type="hidden"> <!-- 화면에 표시안됨 -->
+
+        <button type="submit">전송</button>
+        <button type="button">그냥버튼</button>
+        <button type="reset">폼 초기화</button>
+
+        <input type="submit" value="가입">
+        <input type="button" value="나도버튼">
+        <input type="reset" value="나도 초기화 기능"><br>
+        <!--<input type="cancle" value="취소"> 현재는 없음-->
+
+
+        <textarea rows="10" cols="50"></textarea> <!--10줄 50자크기 사이즈로 변경(기본 사이즈 변경)-->
+
+    </form>
+
+    <!-- 
+    
+        form - 데이터를 전송하기위한 태그
+
+        속성
+            - action : 폼 데이터를 전송
+            - method : 폼 데이터를 전송할 방법, GET, POST
+            - target : 폼 데이터를 전송후에 새창에서 열것인가 아니면 현재 페이지를 변경할것인가? 등등
+            - enctype: 폼 데이터의 인코딩 유형 지정
+                        파일 업로드시 multipart/form-data 사용
+                        application/x-www-form-urlencoded - 기본값 (폼태그의 기본값임/기본셋팅되어있음)
+            - autocomplete : 폼 내부 자동완성 기능 켜기 / 끄기 (on, off)
+        데이터 전송 - submit()
+        reset
+
+    
+    -->
+
+    <input type="text">
+    <button>전송</button>
+
+</body>
+
+</html>

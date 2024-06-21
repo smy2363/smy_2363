@@ -1,0 +1,122 @@
+<!-- signup.html  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./static/javascript/signup.js"></script>
+    <link rel="stylesheet" href="./static/css/signup.css">
+</head>
+
+<body>
+
+    <div id="wrap">
+        <h2 id="pageTitle">회원가입</h2>
+        <form id="signupForm" method="get" action="./signupComplete.html">
+            <fieldset class="fd">
+                <legend>필수입력</legend>
+                <div id="essntial" class="signupField">
+                    <div class="inputField">
+                        <label for="userId">아이디</label>
+                        <input type="text" name="userId" id="userId" maxlength="20" minlength="6"
+                            placeholder="아이디는 6자이상 20자이하">
+                    </div>
+                    <div class="inputField">
+                        <label for="userPw">비밀번호</label>
+                        <input type="password" name="userPw" id="userPw">
+                    </div>
+                    <div class="inputField">
+                        <label for="pwRe">비밀번호확인</label>
+                        <input type="password" id="pwRe">
+                    </div>
+                    <div class="inputField">
+                        <label for="email">이메일</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="inputField">
+                        <label for="tel">연락처</label>
+                        <input type="text" name="tel" id="tel">
+                    </div>
+                    <div class="inputField">
+                        <label for="addr">주소</label>
+                        <input type="text" name="addr" id="addr">
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset class="fd">
+                <legend>선택입력</legend>
+                <div id="choice" class="signupField">
+                    <div>
+                        <h3>관심분야</h3>
+                        <div class="interest">
+                            <p>
+                                <input type="checkbox" name="interest" value="game">게임
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="car">자동차
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="movie">영화
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="coffe">커피
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="book">책
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="computer">컴퓨터
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="notebook">노트북
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="robot">로봇
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="startup">창업
+                            </p>
+                            <p>
+                                <input type="checkbox" name="interest" value="conquestWorld">세계정복
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div style="width:100%">
+                        <h3>직업</h3>
+                        <div class="jobList">
+                            <input type="radio" name="job" value="학생">학생
+                            <input type="radio" name="job" value="법조인">법조인
+                            <input type="radio" name="job" value="대통령">대통령
+                            <input type="radio" name="job" value="프로그래머">프로그래머
+                        </div>
+                    </div>
+                    <div style="width:100%">
+                        <h3>나와 닮은연예인</h3>
+                        <input type="file" id="portrait">
+                        <div id="preview"></div>
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+            <div id="signupButton">
+                <button type="button" id="signup">회원가입</button>
+            </div>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!--link.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function move() {
+            setTimeout(function () {
+                location.href = "https://www.naver.com";
+            }, 3000);
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <a href="javascript:move()">3초뒤에 네이버</a>
+
+    <!-- 
+    
+    web 데이터 전달 방식: GET, POST, DELETE, PUT, PATCH, TRACE, HEAD, POTIONS, CONNECT
+
+    GET - 전달하는 값을 있는 그대로 전달, 파라미터(쿼리)
+    http://www.naver.com?name=이순신&age=19 
+    - 브라우저 히스토리(방문기록)에 저장된다.
+    - 쿼리스트링의 길이는 제한이 있다.(브라우저에 따라 다름)
+    - 데이터를 요청하거나 페이지를 요청할때 사용된다.
+
+    -->
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://comic.naver.com/webtoon/list?titleId=777767&tab=fri">네이버웹툰</a>
+    <a href="./login.html">로그인</a>
+
+
+
+    <div id="movie" style="height:1000px;">
+        <a href="#movie">영화</a>
+        <a href="#webtoon">웹툰</a>
+        <a href="#game">게임</a>
+        <h2>여기는 영화</h2>
+    </div>
+
+    <div id="webtoon" style="height:1000px;">
+        <a href="#movie">영화</a>
+        <a href="#webtoon">웹툰</a>
+        <a href="#game">게임</a>
+        <h2>여기는 웹툰</h2>
+    </div>
+
+    <div id="game" style="height:1000px;">
+        <a href="#movie">영화</a>
+        <a href="#webtoon">웹툰</a>
+        <a href="#game">게임</a>
+        <h2>여기는 게임</h2>
+    </div>
+
+
+</body>
+
+</html>
