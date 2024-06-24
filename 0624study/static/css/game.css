@@ -1,0 +1,66 @@
+/*game.css*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+#wrap {
+    width: 1000px;
+    margin: 50px auto;
+    display: flex;
+}
+
+#gameState {
+    width: 200px;
+    padding-right: 50px;
+}
+
+#gameStart {
+    width: 100%;
+}
+
+#start {
+    width: 100px;
+}
+
+#state {
+    font-size: 20px;
+}
+
+#wrap .hide {
+    display: none;
+}
+
+#gameBoard {
+    width: 800px;
+}
+
+#board {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 25%;
+    padding: 10px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.itemHide {
+    background: #aaa;
+    width: 100%;
+    height: 100%;
+}
+
+.select {
+    border: 1px solid red;
+}
