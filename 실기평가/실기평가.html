@@ -1,0 +1,118 @@
+<!--실기평가.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./static/javascript/실기평가1.js"></script>
+
+
+
+    <link rel="stylesheet" href="./static/css/실기평가.css">
+</head>
+
+<body>
+
+    <div id="warp">
+        <div id="title">
+            <h1>세상의 모든 부동산 - 세모부 </h1>
+        </div>
+        <hr>
+        <div id="filter">
+            <select id="거래방식">
+                <option value="0">거래방식</option>
+                <option value="1">월세</option>
+                <option value="2">전세</option>
+                <option value="3">매매</option>
+            </select>
+            <select id="가격대">
+                <option value="0">가격대</option>
+                <option value="">1억미만</option>
+                <option value="">1억~5억</option>
+                <option value="">5억~10억</option>
+                <option value="">10억~50억</option>
+                <option value="">50억~100억</option>
+            </select>
+            <select id="면적">
+                <option value="0">면적</option>
+                <option value="">10평미만</option>
+                <option value="">10평~20평</option>
+                <option value="">20평~30평</option>
+                <option value="">30평~50평</option>
+                <option value="">50평~70평</option>
+                <option value="">70평~100평</option>
+            </select>
+            <select id="방/욕실수">
+                <option value="0">방/욕실수</option>
+                <option value="">원룸/1개</option>
+                <option value="">투룸/1개</option>
+                <option value="">쓰리룸/2개</option>
+            </select>
+            <div class="inputBox">
+                <input type="text" size="50" style="text-align:right" id="search" placeholder="검색"></input>
+            </div>
+            <div id="상담">
+                <h3>상담</h3>
+            </div>
+            <div id="box">
+                <div id="box_1">
+                    <div class="b1"><a
+                            href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                            <span class="box1"></span></a>
+                        <p class="text">아파트<br>전세1억 2,000</p>
+                    </div>
+                    <div class="b2"><a
+                            href="https://new.land.naver.com/houses?ms=36.3387146,127.3432194,15&a=JWJT:SGJT:HOJT:DDDGG&e=RETAIL&f=20000&g=30000&articleNo=2428415591">
+                            <span class="box1"></span></a>
+                        <p class="text">주택<br>전세2억 2,000</p>
+                    </div>
+                </div>
+                <div class="b3">
+                    <a
+                        href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                        <span class="box1"></span></a>
+                    <p class="text">오피스텔<br>월세 1,000/50</p>
+                </div>
+                <div class="b4">
+                    <a
+                        href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                        <span class="box1"></span></a>
+                    <p class="text">아파트<br>전세 2억 2,000</p>
+                </div>
+
+                <div id="box_2">
+                    <div class="b5"><a
+                            href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                            <span class="box2"></span></a>
+                        <p class="text">아파트<br>매매30억 2,000</p>
+                    </div>
+                    <div class="b6">
+                        <a
+                            href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                            <span class="box2"></span></a>
+                        <p class="text">아파트<br>전세 1억 2,000</p>
+                    </div>
+                    <div class="b7">
+                        <a
+                            href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                            <span class="box2"></span></a>
+                        <p class="text">아파트<br>전세 2억 6,000</p>
+                    </div>
+                    <div class="b8">
+                        <a
+                            href="https://new.land.naver.com/complexes/119871?ms=36.3577579,127.3469422,18&a=ABYG:JGC:PRE:APT&b=B1&e=RETAIL&f=10000&g=20000&articleNo=2426198126">
+                            <span class="box2"></span></a>
+                        <p class="text">오피스텔<br>월세 2000/45</p>
+                    </div>
+                </div>
+            </div>
+
+
+</body>
+
+</html>
