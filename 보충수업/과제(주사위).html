@@ -1,0 +1,63 @@
+<!-- 과제(주사위) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    /*
+        주사위 세개를 던진다.
+        영진이와 경제가 주사위 게임을 한다.
+        주사위의 합이 작은사람이 이긴다.
+        하지만 주사위 세개가 모두 6이라면 무조건 이긴다.
+        그리고, 주사위 두개가 3이라면 세개가 6일경우 보다는 약하지만
+        두번째로 이길 수 있는 큰 값이다.
+        
+   */
+
+    영진dice1 = Math.floor(Math.random() * 6) + 1;
+    영진dice2 = Math.floor(Math.random() * 6) + 1;
+    영진dice3 = Math.floor(Math.random() * 6) + 1;
+    경제dice1 = Math.floor(Math.random() * 6) + 1;
+    경제dice2 = Math.floor(Math.random() * 6) + 1;
+    경제dice3 = Math.floor(Math.random() * 6) + 1;
+
+
+    영진dice = 영진dice1 + 영진dice2 + 영진dice3;
+    경제dice = 경제dice1 + 경제dice2 + 경제dice3;
+
+    document.write("영진의 주사위는? " + 영진dice1 + " , " + 영진dice2 + " , " + 영진dice3 + "합계는? " + 영진dice + "<br>");
+    document.write("경제의 주사위는? " + 경제dice1 + " , " + 경제dice2 + " , " + 경제dice3 + "합계는? " + 경제dice + "<br>");
+
+    if ((영진dice1 == 6) && (영진dice2 == 6) && (영진dice3 == 6)) {
+        document.write("영진의 승리!!!");
+    } else if ((경제dice1 == 6) && (경제dice2 == 6) && (경제dice3 == 6)) {
+        document.write("경제의 승리!!!");
+    } else if ((영진dice1 == 6 && 영진dice2 == 6) || (영진dice2 == 6 && 영진dice3 == 6) || (영진dice1 == 6 && 영진dice3 == 6)) {
+        document.write("영진의 승리!!!");
+    } else if ((경제dice1 == 6 && 경제dice2 == 6) || (경제dice2 == 6 && 경제dice3 == 6) || (경제dice1 == 6 && 경제dice3 == 6)) {
+        document.write("경제의 승리!!!");
+    } else if (영진dice < 경제dice) {
+        document.write("영진의 승리!!!");
+    } else if (영진dice > 경제dice) {
+        document.write("경제의 승리!!!");
+    } else {
+        document.write("무승부!!!");
+    }
+
+
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
