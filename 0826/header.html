@@ -1,8 +1,66 @@
-<!-- header.html -->
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-<div id="top">
-    로그인
+<div th:fragment="header" id="header">
+    <div id="nav">
+        <div class="logo"></div>
+        <ul class="navbar-menu">
+            <li class="nav-item">
+                <a href="">바지</a>
+                <ul class="navbar-sub">
+                    <li class="sub-item"><a href="">청바지</a></li>
+                    <li class="sub-item"><a href="">슬랙스</a></li>
+                    <li class="sub-item"><a href="">조거팬츠</a></li>
+                    <li class="sub-item"><a href="">카고팬츠</a></li>
+                    <li class="sub-item"><a href="">스키니진</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="">상의</a>
+                <ul class="navbar-sub">
+                    <li class="sub-item"><a href="">티셔츠</a></li>
+                    <li class="sub-item"><a href="">맨투맨</a></li>
+                    <li class="sub-item"><a href="">베이직</a></li>
+                    <li class="sub-item"><a href="">니트</a></li>
+                    <li class="sub-item"><a href="">반팔티</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="">아우터</a>
+                <ul class="navbar-sub">
+                    <li class="sub-item"><a href="">코트</a></li>
+                    <li class="sub-item"><a href="">패딩</a></li>
+                    <li class="sub-item"><a href="">가디건</a></li>
+                    <li class="sub-item"><a href="">점퍼</a></li>
+                    <li class="sub-item"><a href="">바람막이</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="">신발</a>
+                <ul class="navbar-sub">
+                    <li class="sub-item"><a href="">런닝화</a></li>
+                    <li class="sub-item"><a href="">구두</a></li>
+                    <li class="sub-item"><a href="">슬리퍼</a></li>
+                    <li class="sub-item"><a href="">샌들</a></li>
+                    <li class="sub-item"><a href="">부츠</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        <div id="sub-nav">
+            <div class="searchBox">
+                <input type="text" name="keyword" id="keyword">
+                <i class="bi bi-search-heart"></i>
+
+            </div>
+            <div class="signInBox">
+                <a href=""><i class="bi bi-person-bounding-box"></i></a>
+            </div>
+            <div class="orderBox">
+                <a href=""><i class="bi bi-cart-check"></i></a>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="nav">
-    메뉴
-</div>
+
+</html>
