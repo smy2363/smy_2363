@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    //문자열 HelloWorld! 을 출력하시오
+
+    document.write("HelloWorld!");
+
+    //정수 a와 b가 주어집니다. 각 수를 입력받아 입출력 예와 같은 형식으로
+    // 출력하는 코드를 작성해 보세요.
+    // 예 -> a=4, a=5
+
+    a = 4;
+    b = 5;
+
+    document.write("<br>" + "a=" + a + "<br>" + "a=" + b);
+
+    // 문자열 바나나와 정수 5가 주어집니다.
+    // String이 5번 반복된 문자열을 만들어 출력하는 코드를 작성해보세요
+
+    name = "바나나";
+    num = 5;
+    result = name.repeat(num);  //문자열 반복!!
+
+    document.write("<br>" + result);
+
+    // // 영어 알파벳으로 이루어진 문자열 aBxDeFg가 있습니다.
+    // // 각 알파벳을 대문자는 소문자로 소문자는 대문자로 변환해서 출력하는 코드를 작성하세요
+
+    // a = aBxDeFg;
+    // b = AbXdEfG;
+
+    // c = a.toLowerCase() === b.toLowerCase();
+    // d = b.toUpperCase() === a.toUppercase();
+
+    // document.write(c === d);
+
+
+    //특수문자 !&@#(!)를 출력하세요
+
+    document.write("<br>" + "!&@#(!)");
+
+    //두 정수 4, 5의 계산식을 출력하세요
+
+    num1 = 4;
+    num2 = 5;
+    result = num1 + num2;
+
+    document.write("<br>" + num1 + "+" + num2 + "=" + result);
+
+
+    //문자열 apple pen에 공백이 없이 출력하세요.
+
+    name = "apple pen";
+
+    result = name.replace(' ', '');
+    document.write("<br>" + result + "<br>");
+
+    //문자열 abcde 를 세로로 길게 작성하세요
+
+    name = "abcde";
+
+    for (i = 0; i < name.length; i++) {
+        document.write(name[i] + "<br>");
+    }
+
+    // 100을 입력했을때 짝수는 n is even을 홀수는 n is odd를 출력하세요
+
+    num = 100;
+
+    for (i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+            document.write([i] + " is even");
+        } else {
+            document.write([i] + " is odd");
+        }
+    }
+
+
+    // 재현이는 프로젝트 보고서를 출력하고 있습니다. 
+    // 출력해야 할 보고서는 총 10페이지이며, 재현이는 이 보고서를 25부 출력해야 합니다. 
+    // 현재 프린터기에는 A4용지 150장이 있습니다. 
+    // 재현이는 몇 장의 A4용지를 더 준비해야 하나요
+
+    page = 10;
+    output = 25;
+    a4 = 150;
+    total = page * output;
+    result = total - a4;
+
+    document.write("<br>" + "준비할 A4용지는 ?" + result + "장" + "<br>");
+
+    // 민호는 서점에 갔다. 
+    // 서점에서 교재 15000원, 노트 3000원, 펜 한 자루에 2000원짜리 5자루를 구매했다. 
+    // 집에 돌아오는 길에 맛있어 보이는 빵도 샀다. 
+    // 민호가 오늘 지출한 총 금액은 35000원이다. 
+    // 빵은 얼마인가?
+
+    book = 15000;
+    note = 3000;
+    pen = 2000;
+    penTotal = pen * 5;
+    total = 35000;
+
+    totalSum = book + note + penTotal;
+    result = total - totalSum;
+
+    document.write("빵의 금액은 ? " + result + "원");
+
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
