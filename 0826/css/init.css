@@ -24,6 +24,8 @@ a {
     padding: 15px 0;
     position: sticky;
     top: 0;
+    background: #fff;
+    border-bottom: 1px solid #bbb;
 }
 
 #nav {
@@ -59,6 +61,7 @@ a {
 #nav .navbar-menu .nav-item .navbar-sub {
     position: relative;
     top: -20px;
+    background: #fff;
 }
 
 #nav .navbar-menu .nav-item .navbar-sub .sub-item {
